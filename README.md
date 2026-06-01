@@ -1,8 +1,8 @@
-# 闫家欢 / Ningqian AI Engineering Portfolio
+# NingQian / 宁谦 AI Engineering Portfolio
 
 这是我的 GitHub Pages 作品集，用来公开记录从传统金融投研转向 AI 工程与研究应用的过程。这个站点本身不是最终作品，真正重要的是它后续链接的开源项目、实验记录、评测结果和代码贡献。
 
-Live site: <https://jiahuanyan123-source.github.io/>
+Live site: [GitHub Pages deployment](https://jiahuanyan123-source.github.io/)
 
 ## 当前定位
 

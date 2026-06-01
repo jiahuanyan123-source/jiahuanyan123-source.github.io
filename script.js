@@ -62,7 +62,7 @@ const caseStudies = {
   "creative-lab": {
     type: "Creative Side Project / 2024",
     title: "创作实验室",
-    summary: "以“闫家欢”的名字在网易云音乐发布单曲《把坏天气留在楼下》，并保留小说、短视频和个人表达作为长期副线。",
+    summary: "以 NingQian / 宁谦的身份保留音乐、小说、短视频和个人表达作为长期副线。",
     role: "音乐发布、小说写作、短视频实验",
     focus: "个人创造力副线",
     year: "2024",
