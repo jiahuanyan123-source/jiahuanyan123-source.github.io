@@ -48,6 +48,10 @@ python -m http.server 5173
 http://localhost:5173
 ```
 
+## 部署
+
+这个仓库使用 GitHub Pages 部署。推送到 `main` 分支后，GitHub 会自动更新线上页面。
+
 ## 下一步
 
 1. 建立第一个真实 AI 项目 repo。
