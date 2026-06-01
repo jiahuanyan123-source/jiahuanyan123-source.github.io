@@ -56,16 +56,18 @@ const caseStudies = {
   "creative-lab": {
     type: "Creative Lab / 2024",
     title: "创作实验室",
-    summary: "把音乐制作、小说写作、短视频和生活记录放进同一个创作空间，探索 AI 与个人表达之间的连接。",
-    role: "音乐制作、小说写作、短视频实验",
-    focus: "AI 时代的个人创作",
+    summary: "以“闫家欢”的名字在网易云音乐发布单曲《把坏天气留在楼下》，同时把小说写作、短视频和生活记录放进同一个创作空间。",
+    role: "音乐发布、小说写作、短视频实验",
+    focus: "AI 时代的个人创作与音乐表达",
     year: "2024",
     points: [
-      "保留创作灵感、草稿、脚本、歌词和制作过程。",
+      "已在网易云音乐发布单曲《把坏天气留在楼下》。",
       "尝试用 AI 扩展构思、剪辑、配乐和文本生成能力。",
-      "让非职业化的兴趣也成为长期个人档案的一部分。"
+      "让音乐、小说和短视频成为 AI/金融主线之外的长期创作侧面。"
     ],
-    next: "下一步会挑选音乐、小说和短视频方向各一个实验，做成可展示的小作品。"
+    next: "下一步会继续沉淀歌曲、歌词、编曲和短视频创作过程。",
+    link: "https://163cn.tv/79f4dcc",
+    linkText: "在网易云音乐收听《把坏天气留在楼下》"
   }
 };
 
@@ -145,6 +147,17 @@ function fillCaseDialog(caseStudy) {
   caseDialog.querySelector("[data-case-focus]").textContent = caseStudy.focus;
   caseDialog.querySelector("[data-case-year]").textContent = caseStudy.year;
   caseDialog.querySelector("[data-case-next]").textContent = caseStudy.next;
+
+  const caseLink = caseDialog.querySelector("[data-case-link]");
+  const caseLinkText = caseDialog.querySelector("[data-case-link-text]");
+  if (caseStudy.link) {
+    caseLink.href = caseStudy.link;
+    caseLinkText.textContent = caseStudy.linkText || "查看公开作品";
+    caseLink.hidden = false;
+  } else {
+    caseLink.hidden = true;
+    caseLink.removeAttribute("href");
+  }
 
   const pointsList = caseDialog.querySelector("[data-case-points]");
   pointsList.replaceChildren();

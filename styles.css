@@ -1072,6 +1072,33 @@ section[id] {
   margin: 0;
 }
 
+.case-link {
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--accent);
+  display: inline-flex;
+  font-weight: 760;
+  gap: 8px;
+  margin-top: 24px;
+  min-height: 44px;
+  padding: 10px 14px;
+}
+
+.case-link[hidden] {
+  display: none;
+}
+
+.case-link:hover {
+  background: var(--surface-2);
+  color: var(--accent-2);
+}
+
+.case-link svg {
+  height: 17px;
+  width: 17px;
+}
+
 .about-grid {
   display: grid;
   gap: 80px;
