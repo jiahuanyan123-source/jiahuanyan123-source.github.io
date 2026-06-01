@@ -11,61 +11,67 @@ const caseClose = document.querySelector("[data-case-close]");
 const caseTriggers = document.querySelectorAll("[data-case]");
 
 const caseStudies = {
-  "ai-finance-research": {
-    type: "Finance AI / 2026",
-    title: "AI 金融研究助手",
-    summary: "把传统金融研究中的资料整理、信息对比、市场观察和观点沉淀交给 AI 增强，探索更高效的个人投研工作流。",
-    role: "金融场景定义、AI 应用设计、研究流程整理",
-    focus: "用 AI 增强投研与市场观察",
+  "financial-rag-eval": {
+    type: "Finance AI / Building",
+    title: "Financial RAG & Credit Memo Eval",
+    summary: "面向金融文档的 RAG 与信用研究 memo 项目路线。重点不是做一个泛泛聊天助手，而是验证检索、引用、摘要和结论生成是否可靠。",
+    role: "问题定义、数据流程设计、评测框架建设",
+    focus: "金融文档 RAG、引用溯源、摘要质量评测",
     year: "2026",
     points: [
-      "把研报、新闻、公告和市场数据整理为可比较的输入。",
-      "用 AI 做摘要、提问、结构化提取和初步观点生成。",
-      "保留人工判断环节，让 AI 成为研究助手，而不是替代决策。"
+      "计划支持金融文档读取、分块、检索、引用定位和 memo 生成。",
+      "评测会关注检索命中率、引用准确性、摘要遗漏、幻觉风险和输出可复核性。",
+      "当前状态是 Building；公开 repo、示例数据、测试和报告完成后再标记为 Public project。"
     ],
-    next: "下一步会整理一个真实投研场景，从资料输入到结论输出形成完整案例。"
+    next: "先完成 v0：样本文档、RAG pipeline、引用输出、基础测试和一份可复现报告。",
+    link: "https://github.com/jiahuanyan123-source",
+    linkText: "查看 GitHub 主页与后续公开项目"
   },
-  "knowledge-automation": {
-    type: "Automation / 2025",
-    title: "个人知识自动化系统",
-    summary: "把 AI 学习、读书笔记、投研材料、生活记录和项目复盘自动归档，形成一个能持续生长的个人知识库。",
-    role: "知识结构设计、自动化流程、工具整合",
-    focus: "长期知识管理与自动归档",
-    year: "2025",
+  "crypto-quant-lab": {
+    type: "Quant Research / Planned v0",
+    title: "Crypto Quant Lab",
+    summary: "一个加密资产量化研究框架，目标是展示数据处理、回测工程、风险指标和研究报告能力，而不是宣传赚钱策略。",
+    role: "研究框架设计、Python 工程实现、回测与风险评估",
+    focus: "OHLCV 数据、基线策略、手续费/滑点、风险指标",
+    year: "2026",
     points: [
-      "把输入分成金融、AI、创作、生活和读书几个稳定入口。",
-      "减少手动整理成本，让记录可以被搜索、复盘和再利用。",
-      "让知识库服务长期转型，而不是变成堆资料的仓库。"
+      "v0 会从 BTC/ETH 日线数据、均线基线策略和 buy-and-hold 对比开始。",
+      "必须显式计入手续费、滑点、最大回撤、夏普、交易次数和样本区间。",
+      "不会承诺收益，不做投资建议，不接实盘 API，不保存交易所密钥。"
     ],
-    next: "下一步会把常用工具链和自动化流程画成图，并沉淀成可复制模板。"
+    next: "先建立 repo 和 README，再实现数据读取、回测核心、报告生成和最小测试集。",
+    link: "https://github.com/jiahuanyan123-source",
+    linkText: "查看 GitHub 主页与后续公开项目"
   },
-  "ai-learning-log": {
-    type: "Learning Log / 2025",
-    title: "AI 学习日志",
-    summary: "记录从传统金融人士转型为 AI 科学家和高级应用者的路径，包括模型理解、应用实践、工具构建和阶段复盘。",
-    role: "学习规划、实践记录、阶段复盘",
-    focus: "AI 能力成长路径",
-    year: "2025",
+  "llm-learning-log": {
+    type: "Learning Log / Ongoing",
+    title: "LLM Learning Log",
+    summary: "记录 LLM、Agent、RAG、评测、系统工程和开源协作的学习过程。它不是日记式感想，而是项目复盘和知识索引。",
+    role: "学习规划、代码练习、论文和项目复盘",
+    focus: "LLM 应用、Agent、评测、开源贡献",
+    year: "2026",
     points: [
-      "把 AI 学习拆成基础理解、工具实践、场景应用和项目输出。",
-      "记录每一阶段的困惑、突破和方法变化。",
-      "用真实项目检验学习成果，而不是只停留在课程和概念。"
+      "每条记录尽量关联代码、论文、issue、PR 或可运行实验。",
+      "重点记录失败原因和修正过程，而不是只保存结论。",
+      "后续会把学习日志拆进独立 repo，形成可检索的工程学习档案。"
     ],
-    next: "下一步会整理第一组学习日志，围绕 LLM、Agent、自动化和金融场景展开。"
+    next: "先沉淀第一组主题：Git/GitHub、Python 工程、RAG 基础、量化回测和开源 PR 流程。",
+    link: "https://github.com/jiahuanyan123-source",
+    linkText: "查看 GitHub 主页与后续公开项目"
   },
   "creative-lab": {
-    type: "Creative Lab / 2024",
+    type: "Creative Side Project / 2024",
     title: "创作实验室",
-    summary: "以“闫家欢”的名字在网易云音乐发布单曲《把坏天气留在楼下》，同时把小说写作、短视频和生活记录放进同一个创作空间。",
+    summary: "以“闫家欢”的名字在网易云音乐发布单曲《把坏天气留在楼下》，并保留小说、短视频和个人表达作为长期副线。",
     role: "音乐发布、小说写作、短视频实验",
-    focus: "AI 时代的个人创作与音乐表达",
+    focus: "个人创造力副线",
     year: "2024",
     points: [
       "已在网易云音乐发布单曲《把坏天气留在楼下》。",
-      "尝试用 AI 扩展构思、剪辑、配乐和文本生成能力。",
-      "让音乐、小说和短视频成为 AI/金融主线之外的长期创作侧面。"
+      "这个板块展示个人表达和创造力，但不作为 AI 工程能力的主要证明。",
+      "后续如果使用 AI 参与创作，会明确记录工具、流程和人工判断边界。"
     ],
-    next: "下一步会继续沉淀歌曲、歌词、编曲和短视频创作过程。",
+    next: "保留为作品集副线；主线仍然优先建设 AI 项目和开源贡献。",
     link: "https://163cn.tv/79f4dcc",
     linkText: "在网易云音乐收听《把坏天气留在楼下》"
   }

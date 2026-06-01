@@ -1,18 +1,42 @@
-# 个人作品集网站
+# 闫家欢 / Ningqian AI Engineering Portfolio
 
-这是一个可以直接部署到 GitHub Pages 的静态个人作品集模板。它包含：
+这是我的 GitHub Pages 作品集，用来公开记录从传统金融投研转向 AI 工程与研究应用的过程。这个站点本身不是最终作品，真正重要的是它后续链接的开源项目、实验记录、评测结果和代码贡献。
 
-- 首页首屏
-- 精选作品
-- 记录时间线
-- 关于我
-- 联系入口
-- 深浅主题切换
-- 作品分类筛选
+Live site: <https://jiahuanyan123-source.github.io/>
+
+## 当前定位
+
+我会把作品集分成两层：
+
+- Portfolio site: 展示身份定位、项目路线、学习记录和联系方式。
+- Project evidence: 用独立 GitHub repo 展示可运行代码、测试、实验报告、复现步骤和局限性。
+
+## 正在建设的项目方向
+
+- `financial-rag-eval`: 金融文档 RAG、引用溯源、摘要质量评测和信用研究 memo 生成。
+- `crypto-quant-lab`: 加密资产量化研究框架，先做数据、回测、手续费/滑点、风险指标和报告生成。
+- `llm-learning-log`: 记录 LLM、Agent、评测、系统工程和开源贡献的学习过程。
+- Open-source contribution log: 记录未来对真实开源项目的 issue、PR、review 和复盘。
+
+这些项目在未公开代码之前只会标记为 `Building`，不会包装成已经完成。
+
+## 一个项目被放进主页前必须具备
+
+- 可公开访问的 GitHub repo。
+- 清晰的 README 和运行方式。
+- 至少一组可复现实验或示例输出。
+- 基础测试或验证脚本。
+- 明确写出局限性和下一步。
+
+## 技术实现
+
+- Static HTML / CSS / JavaScript
+- GitHub Pages
+- Responsive layout
+- Light / dark theme
+- Project filtering and case-study dialog
 
 ## 本地预览
-
-在当前目录运行：
 
 ```powershell
 python -m http.server 5173
@@ -24,18 +48,9 @@ python -m http.server 5173
 http://localhost:5173
 ```
 
-## 部署到 GitHub Pages
+## 下一步
 
-1. 在 GitHub 创建一个新仓库。
-2. 如果想用 GitHub 默认个人主页地址，把仓库命名为 `你的GitHub用户名.github.io`。
-3. 把本目录的文件上传到仓库根目录。
-4. 进入仓库 `Settings` -> `Pages`。
-5. Source 选择 `Deploy from a branch`。
-6. Branch 选择 `main`，目录选择 `/root`。
-7. 保存后等待 GitHub 自动部署。
-
-## 替换内容
-
-- 在 `index.html` 里替换 `你的名字`、邮箱、社交链接、作品标题和说明。
-- 替换 `assets/hero-workspace.png` 可以更换首屏图片。
-- 在 `styles.css` 里修改颜色变量可以快速改变整体视觉风格。
+1. 建立第一个真实 AI 项目 repo。
+2. 把项目卡片从 `Building` 更新为 `Public repo`。
+3. 增加项目截图、实验报告和技术细节。
+4. 持续记录开源贡献和学习复盘。
