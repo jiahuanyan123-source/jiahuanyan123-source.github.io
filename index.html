@@ -9,11 +9,19 @@
       content="一个用于展示作品、记录成长和沉淀个人表达的高级感个人作品集网站。"
     >
     <meta name="theme-color" content="#151515">
+    <meta property="og:title" content="你的名字 | 个人作品集">
+    <meta property="og:description" content="保存作品、思考和阶段性记录的个人档案。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jiahuanyan123-source.github.io/">
+    <meta property="og:image" content="https://jiahuanyan123-source.github.io/assets/hero-workspace.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="assets/hero-workspace.png">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="page-grain" aria-hidden="true"></div>
+    <a class="skip-link" href="#work">跳到主要内容</a>
     <header class="site-header" data-header>
       <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
       <a class="brand" href="#top" aria-label="回到首页">
@@ -24,6 +32,7 @@
       <nav class="site-nav" aria-label="主导航">
         <a href="#work">作品</a>
         <a href="#journal">记录</a>
+        <a href="#method">方法</a>
         <a href="#about">关于</a>
         <a href="#contact">联系</a>
       </nav>
@@ -138,7 +147,7 @@
 
           <div class="work-grid">
             <article class="work-card featured reveal" data-category="design">
-              <a href="#" aria-label="查看作品：个人档案系统">
+              <a href="#case-dialog" data-case="archive-system" aria-haspopup="dialog" aria-label="查看作品：个人档案系统">
                 <figure class="work-visual photo">
                   <img src="assets/hero-workspace.png" alt="个人档案系统项目封面">
                 </figure>
@@ -159,7 +168,7 @@
             </article>
 
             <article class="work-card reveal" data-category="product">
-              <a href="#" aria-label="查看作品：记录工具概念">
+              <a href="#case-dialog" data-case="recording-tool" aria-haspopup="dialog" aria-label="查看作品：记录工具概念">
                 <figure class="work-visual interface" aria-hidden="true">
                   <span></span>
                   <span></span>
@@ -181,7 +190,7 @@
             </article>
 
             <article class="work-card reveal" data-category="writing">
-              <a href="#" aria-label="查看作品：一年观察笔记">
+              <a href="#case-dialog" data-case="year-notes" aria-haspopup="dialog" aria-label="查看作品：一年观察笔记">
                 <figure class="work-visual editorial" aria-hidden="true">
                   <span></span>
                   <span></span>
@@ -203,7 +212,7 @@
             </article>
 
             <article class="work-card reveal" data-category="design">
-              <a href="#" aria-label="查看作品：视觉练习合集">
+              <a href="#case-dialog" data-case="visual-practice" aria-haspopup="dialog" aria-label="查看作品：视觉练习合集">
                 <figure class="work-visual gallery" aria-hidden="true">
                   <span></span>
                   <span></span>
@@ -263,6 +272,36 @@
         </div>
       </section>
 
+      <section class="section method-section" id="method" aria-labelledby="method-title">
+        <div class="section-inner method-layout">
+          <div class="method-intro">
+            <p class="section-kicker">Method</p>
+            <h2 id="method-title">我如何把想法变成作品。</h2>
+            <p>
+              一个作品集真正有说服力的地方，不只是结果好看，而是能让人看见你怎样定义问题、推进过程和留下判断。
+            </p>
+          </div>
+
+          <div class="method-grid" aria-label="工作方法">
+            <article class="method-card reveal">
+              <span>01</span>
+              <h3>先定义边界</h3>
+              <p>明确作品要解决什么、不解决什么，避免一开始就被形式带着走。</p>
+            </article>
+            <article class="method-card reveal">
+              <span>02</span>
+              <h3>保留过程证据</h3>
+              <p>记录关键草稿、版本变化和取舍原因，让结果背后的判断可以被理解。</p>
+            </article>
+            <article class="method-card reveal">
+              <span>03</span>
+              <h3>定期回看归档</h3>
+              <p>把阶段复盘变成作品的一部分，让长期成长不是感觉，而是有迹可循。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="section-inner about-grid">
           <div>
@@ -318,6 +357,48 @@
         </div>
       </section>
     </main>
+
+    <dialog class="case-dialog" id="case-dialog" data-case-dialog aria-labelledby="case-title">
+      <div class="case-dialog-panel">
+        <button class="icon-button case-close" type="button" data-case-close aria-label="关闭作品详情">
+          <i data-lucide="x"></i>
+        </button>
+
+        <div class="case-dialog-grid">
+          <div>
+            <p class="section-kicker" data-case-type>Case Study</p>
+            <h2 id="case-title" data-case-title>作品详情</h2>
+            <p class="case-summary" data-case-summary></p>
+          </div>
+
+          <dl class="case-facts" aria-label="作品信息">
+            <div>
+              <dt>Role</dt>
+              <dd data-case-role></dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd data-case-focus></dd>
+            </div>
+            <div>
+              <dt>Year</dt>
+              <dd data-case-year></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="case-detail-layout">
+          <div>
+            <h3>关键判断</h3>
+            <ul data-case-points></ul>
+          </div>
+          <div>
+            <h3>下一步</h3>
+            <p data-case-next></p>
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <p>© 2026 你的名字。持续记录，持续更新。</p>
