@@ -31,7 +31,7 @@ const caseStudies = {
     type: "Quant Research / Baseline ready",
     title: "Crypto Quant Freqtrade Lab",
     summary: "一个基于 Freqtrade、OKX futures 数据和 Codex 工作流的加密资产量化研究工作区。它已经完成本地公开安全基线提交，等待创建 GitHub 远程仓库并发布。",
-    role: "Freqtrade 策略工程、dry-run 运营、回测记录、公开版 repo 清理",
+    role: "Freqtrade 策略工程、dry-run 运营、回测记录、公开版 repo 基线整理",
     focus: "Freqtrade、OKX futures、dry-run、失败策略归档、风险边界",
     year: "2026",
     points: [
