@@ -28,20 +28,20 @@ const caseStudies = {
     linkText: "查看 GitHub 主页与后续公开项目"
   },
   "crypto-quant-lab": {
-    type: "Quant Research / Planned v0",
-    title: "Crypto Quant Lab",
-    summary: "一个加密资产量化研究框架，目标是展示数据处理、回测工程、风险指标和研究报告能力，而不是宣传赚钱策略。",
-    role: "研究框架设计、Python 工程实现、回测与风险评估",
-    focus: "OHLCV 数据、基线策略、手续费/滑点、风险指标",
+    type: "Quant Research / Baseline ready",
+    title: "Crypto Quant Freqtrade Lab",
+    summary: "一个基于 Freqtrade、OKX futures 数据和 Codex 工作流的加密资产量化研究工作区。它已经完成本地公开安全基线提交，等待创建 GitHub 远程仓库并发布。",
+    role: "Freqtrade 策略工程、dry-run 运营、回测记录、公开版 repo 清理",
+    focus: "Freqtrade、OKX futures、dry-run、失败策略归档、风险边界",
     year: "2026",
     points: [
-      "v0 会从 BTC/ETH 日线数据、均线基线策略和 buy-and-hold 对比开始。",
-      "必须显式计入手续费、滑点、最大回撤、夏普、交易次数和样本区间。",
-      "不会承诺收益，不做投资建议，不接实盘 API，不保存交易所密钥。"
+      "本地 repo 已在 main 分支完成首个公开安全提交：0d48274 Create public-safe crypto quant lab baseline。",
+      "公开基线包含 README、.gitignore、docs/results_summary.md、V4/V5/Momentum/Multi-Asset 策略代码、Moonshot radar 和失败策略记录。",
+      "数据、日志、SQLite、backtest zip、内部 handoff 和真实配置已被隔离；公开表达只强调工程流程、回测证据和风险意识。"
     ],
-    next: "先建立 repo 和 README，再实现数据读取、回测核心、报告生成和最小测试集。",
+    next: "创建 GitHub 远程仓库 crypto-quant-freqtrade-lab，推送 main，然后把这里的链接替换为项目 repo。",
     link: "https://github.com/jiahuanyan123-source",
-    linkText: "查看 GitHub 主页与后续公开项目"
+    linkText: "GitHub repo 发布后替换为项目链接"
   },
   "llm-learning-log": {
     type: "Learning Log / Ongoing",

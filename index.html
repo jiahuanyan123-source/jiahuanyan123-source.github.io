@@ -18,7 +18,7 @@
     <link rel="canonical" href="https://jiahuanyan123-source.github.io/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="assets/hero-workspace.png" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css?v=20260603-interface">
+    <link rel="stylesheet" href="styles.css?v=20260603-baseline">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -44,6 +44,7 @@
 
       <nav class="site-nav" aria-label="主导航">
         <a href="#build">建设</a>
+        <a href="#pipeline">管线</a>
         <a href="#work">项目</a>
         <a href="#journal">记录</a>
         <a href="#method">方法</a>
@@ -109,7 +110,7 @@
 
             <aside class="hero-note" aria-label="当前状态">
               <span class="hero-note-label">Now</span>
-              <p>当前阶段不包装完成度，先公开建设路线：金融 RAG 评测、币圈量化研究框架、LLM 学习日志和开源贡献记录。</p>
+              <p>当前阶段不包装完成度，先公开建设路线：金融 RAG 评测、Crypto Quant Freqtrade Lab 公开基线、LLM 学习日志和开源贡献记录。</p>
               <div class="hero-note-meta">
                 <span>Finance → AI</span>
                 <span>Updated Jun 2026</span>
@@ -219,12 +220,12 @@
               <span class="track-index">02</span>
               <div>
                 <div class="track-head">
-                  <h3>crypto-quant-lab</h3>
-                  <span class="status-pill planned">Separate thread</span>
+                  <h3>crypto-quant-freqtrade-lab</h3>
+                  <span class="status-pill ready">Baseline ready</span>
                 </div>
-                <p>加密资产量化研究框架，先完成数据读取、基线策略、手续费/滑点、风险指标和报告输出。</p>
+                <p>本地已完成公开安全基线提交：README、.gitignore、结果摘要、策略代码和失败实验记录已整理，等待创建 GitHub 远程仓库并发布。</p>
               </div>
-              <p class="track-next"><strong>Next</strong> sync repo link after access</p>
+              <p class="track-next"><strong>Next</strong> create GitHub repo + push main</p>
             </article>
             <article class="method-card track-card reveal">
               <span class="track-index">03</span>
@@ -248,6 +249,103 @@
               </div>
               <p class="track-next"><strong>Next</strong> first external issue or PR</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pipeline-section" id="pipeline" aria-labelledby="pipeline-title">
+        <div class="section-inner">
+          <div class="section-heading pipeline-heading">
+            <p class="section-kicker">Project Pipeline</p>
+            <h2 id="pipeline-title">项目很多，但公开作品集只展示经过筛选的证据。</h2>
+            <p>
+              当前策略不是把所有项目平铺到首页，而是把它们分成主线候选、实验区和暂缓公开三层。能运行、能复现、能解释边界的项目才进入 Selected Work。
+            </p>
+          </div>
+
+          <div class="pipeline-grid" aria-label="项目分层管线">
+            <article class="pipeline-column reveal">
+              <div class="pipeline-column-head">
+                <span class="pipeline-label">Core Candidates</span>
+                <span class="status-pill building">Build first</span>
+              </div>
+              <ul class="pipeline-list">
+                <li>
+                  <strong>Financial RAG Eval</strong>
+                  <p>把险资上会 PPT 能力转成匿名化金融文档 AI 项目，重点做引用、评测和可复现报告。</p>
+                </li>
+                <li>
+                  <strong>股票量化框架</strong>
+                  <p>展示数据工程、回测引擎、风险指标、交易成本和报告输出，不直接宣传策略收益。</p>
+                </li>
+                <li>
+                  <strong>Crypto Quant Freqtrade Lab</strong>
+                  <p>已完成本地公开基线：Freqtrade 策略、Moonshot radar、README、结果摘要和失败策略归档；下一步发布 GitHub repo。</p>
+                </li>
+                <li>
+                  <strong>微信小游戏开发</strong>
+                  <p>有可玩 demo、源码和部署链接后，作为软件工程能力的轻量副证据。</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="pipeline-column reveal">
+              <div class="pipeline-column-head">
+                <span class="pipeline-label">Labs</span>
+                <span class="status-pill ongoing">Explore</span>
+              </div>
+              <ul class="pipeline-list">
+                <li>
+                  <strong>AI短剧</strong>
+                  <p>适合保留为多模态创作实验，只有形成工具链或生成流程时才进入作品集。</p>
+                </li>
+                <li>
+                  <strong>GITHUB大师</strong>
+                  <p>改造成 GitHub 学习与开源贡献记录，而不是包装成一个没有验证的“大师”项目。</p>
+                </li>
+                <li>
+                  <strong>价值投资股票导师 / 创业导师</strong>
+                  <p>可以做成检索增强问答实验，但必须明确数据来源、免责声明和错误边界。</p>
+                </li>
+                <li>
+                  <strong>音乐制作</strong>
+                  <p>保留为创作副线，只有 AI 工具链或音频工程内容成熟后再上移。</p>
+                </li>
+              </ul>
+            </article>
+
+            <article class="pipeline-column reveal">
+              <div class="pipeline-column-head">
+                <span class="pipeline-label">Hold / Private</span>
+                <span class="status-pill side">Do not lead</span>
+              </div>
+              <ul class="pipeline-list">
+                <li>
+                  <strong>股票顶级游资</strong>
+                  <p>如果没有严格样本、回测和风控，很容易显得像玄学策略，暂不作为主项目。</p>
+                </li>
+                <li>
+                  <strong>专业律师</strong>
+                  <p>法律场景风险高，必须有法规检索、引用、免责声明和人工复核设计后再公开。</p>
+                </li>
+                <li>
+                  <strong>专业导游 / 北京美食家</strong>
+                  <p>可以作为生活类 Agent 练习，但和 AI 工程主线关联弱，暂不占首页主位。</p>
+                </li>
+                <li>
+                  <strong>真实业务材料</strong>
+                  <p>所有金融材料必须先匿名化、脱敏和改造成示例数据，不能直接公开。</p>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="pipeline-decision reveal">
+            <i data-lucide="clipboard-check"></i>
+            <div>
+              <strong>当前优先级</strong>
+              <p>先把 Financial RAG Eval 和 股票量化框架做成两个能运行的 repo；Crypto Quant Freqtrade Lab 先做公开版清理；其它项目先不抢首页位置。</p>
+            </div>
           </div>
         </div>
       </section>
@@ -301,7 +399,7 @@
             </article>
 
             <article class="work-card reveal" data-category="quant">
-              <a href="#case-dialog" data-case="crypto-quant-lab" aria-haspopup="dialog" aria-label="查看项目：Crypto Quant Lab">
+              <a href="#case-dialog" data-case="crypto-quant-lab" aria-haspopup="dialog" aria-label="查看项目：Crypto Quant Freqtrade Lab">
                 <figure class="work-visual interface" aria-hidden="true">
                   <span></span>
                   <span></span>
@@ -310,13 +408,13 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Quant Research</span>
-                    <span class="status-pill planned">Planned v0</span>
+                    <span class="status-pill ready">Baseline ready</span>
                   </div>
-                  <h3>Crypto Quant Lab</h3>
-                  <p>加密资产量化研究框架：数据、回测、风险指标、交易成本和报告。</p>
+                  <h3>Crypto Quant Freqtrade Lab</h3>
+                  <p>基于 Freqtrade 和 OKX futures 的加密量化研究工作区，已整理出可公开的本地 Git 基线。</p>
                   <div class="tag-row" aria-label="项目标签">
-                    <span>Python</span>
-                    <span>Backtest</span>
+                    <span>Freqtrade</span>
+                    <span>Public baseline</span>
                     <span>No alpha claims</span>
                   </div>
                 </div>
@@ -549,6 +647,6 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js?v=20260603-interface"></script>
+    <script src="script.js?v=20260603-baseline"></script>
   </body>
 </html>
