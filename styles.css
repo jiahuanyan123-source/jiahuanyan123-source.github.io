@@ -41,6 +41,7 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -49,6 +50,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   letter-spacing: 0;
+  overflow-x: hidden;
   text-rendering: geometricPrecision;
 }
 
@@ -248,8 +250,7 @@ textarea {
 .button svg,
 .text-link svg,
 .hero-proof svg,
-.evidence-list svg,
-.pipeline-decision svg {
+.hero-note svg {
   height: 17px;
   width: 17px;
 }
@@ -300,6 +301,7 @@ textarea {
   margin: 0 auto;
   max-width: var(--max);
   min-height: calc(96vh - 210px);
+  min-width: 0;
   position: relative;
   z-index: 2;
 }
@@ -309,6 +311,11 @@ textarea {
   display: grid;
   gap: 58px;
   grid-template-columns: minmax(0, 1fr) 320px;
+  min-width: 0;
+}
+
+.hero-layout > * {
+  min-width: 0;
 }
 
 .eyebrow,
@@ -327,6 +334,7 @@ textarea {
   line-height: 0.95;
   margin: 0;
   max-width: 920px;
+  overflow-wrap: anywhere;
 }
 
 .hero-copy {
@@ -470,7 +478,6 @@ textarea {
 }
 
 .section,
-.signal-band,
 .contact-section {
   padding: 96px 28px;
 }
@@ -515,22 +522,6 @@ section[id] {
   white-space: nowrap;
 }
 
-.signal-band {
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-  border-top: 1px solid var(--line);
-  padding-bottom: 56px;
-  padding-top: 56px;
-}
-
-.signal-grid {
-  align-items: end;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: 170px minmax(0, 1fr) auto;
-}
-
-.signal-copy h2,
 .section-heading h2,
 .about-grid h2,
 .contact-layout h2 {
@@ -539,7 +530,6 @@ section[id] {
   margin: 0;
 }
 
-.signal-copy p,
 .section-heading p,
 .about-copy > p,
 .contact-layout p {
@@ -560,165 +550,6 @@ section[id] {
 
 .text-link:hover {
   color: var(--accent-2);
-}
-
-.evidence-band {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 42%, transparent), transparent),
-    var(--bg);
-  border-bottom: 1px solid var(--line);
-  padding: 70px 28px;
-}
-
-.evidence-layout {
-  display: grid;
-  gap: 42px;
-  grid-template-columns: minmax(240px, 0.74fr) minmax(0, 1fr);
-}
-
-.evidence-heading h2 {
-  font-size: 2.55rem;
-  line-height: 1.08;
-  margin: 0;
-}
-
-.evidence-list {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.evidence-list li {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 36px minmax(0, 1fr);
-  padding: 18px;
-}
-
-.evidence-list svg {
-  align-self: start;
-  color: var(--accent-2);
-  margin-top: 2px;
-}
-
-.evidence-list strong {
-  font-size: 1rem;
-}
-
-.evidence-list p {
-  color: var(--muted);
-  grid-column: 2;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.pipeline-section {
-  background:
-    linear-gradient(180deg, transparent, color-mix(in srgb, var(--surface-2) 32%, transparent)),
-    var(--bg);
-}
-
-.pipeline-heading {
-  margin-bottom: 28px;
-}
-
-.pipeline-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.pipeline-column {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 20px;
-}
-
-.pipeline-column-head {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.pipeline-label {
-  color: var(--accent);
-  font-size: 0.74rem;
-  font-weight: 860;
-  text-transform: uppercase;
-}
-
-.pipeline-list {
-  display: grid;
-  gap: 0;
-  list-style: none;
-  margin: 8px 0 0;
-  padding: 0;
-}
-
-.pipeline-list li {
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 8px;
-  padding: 15px 0;
-}
-
-.pipeline-list li:last-child {
-  padding-bottom: 0;
-}
-
-.pipeline-list strong {
-  font-size: 1rem;
-  line-height: 1.35;
-}
-
-.pipeline-list p {
-  color: var(--muted);
-  line-height: 1.7;
-  margin: 0;
-}
-
-.pipeline-decision {
-  align-items: start;
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  display: grid;
-  gap: 14px;
-  grid-template-columns: 42px minmax(0, 1fr);
-  margin-top: 16px;
-  padding: 18px;
-}
-
-.pipeline-decision svg {
-  color: var(--accent-3);
-  height: 24px;
-  margin-top: 2px;
-  width: 24px;
-}
-
-.pipeline-decision strong {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
-
-.pipeline-decision p {
-  color: var(--muted);
-  line-height: 1.75;
-  margin: 0;
 }
 
 .section-heading {
@@ -1515,8 +1346,6 @@ section[id] {
       linear-gradient(0deg, rgba(10, 10, 10, 0.42) 0%, transparent 42%);
   }
 
-  .signal-grid,
-  .evidence-layout,
   .section-heading,
   .journal-layout,
   .method-layout,
@@ -1529,20 +1358,12 @@ section[id] {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
-  .pipeline-grid {
-    grid-template-columns: 1fr;
-  }
-
   .work-card {
     grid-column: span 3;
   }
 
   .work-card.featured {
     grid-column: span 6;
-  }
-
-  .evidence-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sticky-heading {
@@ -1567,6 +1388,7 @@ section[id] {
   .site-header {
     inset: 12px 14px auto 14px;
     padding: 0 10px 0 12px;
+    width: auto;
   }
 
   .brand-text {
@@ -1582,26 +1404,45 @@ section[id] {
     padding: 118px 18px 38px;
   }
 
+  .hero-content,
+  .hero-layout,
+  .hero-layout > div {
+    max-width: calc(100vw - 36px);
+    width: calc(100vw - 36px);
+  }
+
   .hero-image {
     object-position: 70% center;
   }
 
   .hero h1 {
-    font-size: 2.72rem;
+    font-size: 2.34rem;
+    line-height: 1.05;
   }
 
   .hero-copy {
     font-size: 1rem;
+    max-width: min(100%, 21rem);
+    overflow-wrap: break-word;
   }
 
-  .hero-actions,
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .contact-actions {
     align-items: stretch;
     flex-direction: column;
   }
 
   .button {
+    max-width: calc(100vw - 36px);
     width: 100%;
+  }
+
+  .hero-actions .button {
+    width: min(100%, 260px);
   }
 
   .hero-stats {
@@ -1620,18 +1461,10 @@ section[id] {
   }
 
   .section,
-  .evidence-band,
-  .signal-band,
   .contact-section {
     padding: 68px 18px;
   }
 
-  .signal-band {
-    padding-top: 30px;
-  }
-
-  .signal-copy h2,
-  .evidence-heading h2,
   .section-heading h2,
   .method-intro h2,
   .about-grid h2,
@@ -1645,19 +1478,6 @@ section[id] {
 
   .track-card {
     gap: 14px;
-  }
-
-  .evidence-list {
-    grid-template-columns: 1fr;
-  }
-
-  .evidence-list li {
-    grid-template-columns: 32px minmax(0, 1fr);
-    padding: 16px;
-  }
-
-  .pipeline-decision {
-    grid-template-columns: 1fr;
   }
 
   .case-dialog {
