@@ -18,13 +18,13 @@
     <link rel="canonical" href="https://jiahuanyan123-source.github.io/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="assets/hero-workspace.png" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css?v=20260601-evidence">
+    <link rel="stylesheet" href="styles.css?v=20260603-interface">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "NingQian",
-        "alternateName": ["宁谦", "闫家欢"],
+        "alternateName": ["宁谦"],
         "url": "https://jiahuanyan123-source.github.io/",
         "email": "mailto:609822883@qq.com",
         "sameAs": ["https://github.com/jiahuanyan123-source", "https://163cn.tv/79f4dcc"],
@@ -43,8 +43,8 @@
       </a>
 
       <nav class="site-nav" aria-label="主导航">
-        <a href="#work">作品</a>
         <a href="#build">建设</a>
+        <a href="#work">项目</a>
         <a href="#journal">记录</a>
         <a href="#method">方法</a>
         <a href="#about">关于</a>
@@ -86,18 +86,24 @@
           </p>
 
           <div class="hero-actions" aria-label="主要操作">
-            <a class="button primary" href="#work">
-              <i data-lucide="gallery-horizontal-end"></i>
-              看项目
+            <a class="button primary" href="#build">
+              <i data-lucide="route"></i>
+              看建设路线
             </a>
-            <a class="button secondary" href="#journal">
-              <i data-lucide="notebook-tabs"></i>
-              看日志
+            <a class="button secondary" href="#work">
+              <i data-lucide="gallery-horizontal-end"></i>
+              看项目证据
             </a>
             <a class="button secondary" href="https://github.com/jiahuanyan123-source" target="_blank" rel="noreferrer">
               <i data-lucide="github"></i>
               GitHub
             </a>
+          </div>
+
+          <div class="hero-proof" aria-label="作品集证据标准">
+            <span><i data-lucide="git-branch"></i> public repo</span>
+            <span><i data-lucide="flask-conical"></i> reproducible eval</span>
+            <span><i data-lucide="file-check-2"></i> testable code</span>
           </div>
             </div>
 
@@ -156,6 +162,37 @@
         </div>
       </section>
 
+      <section class="evidence-band" aria-labelledby="evidence-title">
+        <div class="section-inner evidence-layout">
+          <div class="evidence-heading">
+            <p class="section-kicker">Evidence Standard</p>
+            <h2 id="evidence-title">主页只负责展示，真正的可信度来自项目证据。</h2>
+          </div>
+          <ul class="evidence-list" aria-label="项目进入作品集前的最低证据标准">
+            <li>
+              <i data-lucide="folder-git-2"></i>
+              <strong>公开仓库</strong>
+              <p>每个主项目都要有独立 repo、README、运行方式和清晰目录。</p>
+            </li>
+            <li>
+              <i data-lucide="square-terminal"></i>
+              <strong>可运行代码</strong>
+              <p>不是截图，不是想法，而是别人能拉下来执行的最小实现。</p>
+            </li>
+            <li>
+              <i data-lucide="badge-check"></i>
+              <strong>测试或评测</strong>
+              <p>用测试、指标或样例报告证明模块真的完成了预期任务。</p>
+            </li>
+            <li>
+              <i data-lucide="triangle-alert"></i>
+              <strong>局限性</strong>
+              <p>明确写出不能做什么、哪里不稳定、下一步如何修正。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section class="section method-section" id="build" aria-labelledby="build-title">
         <div class="section-inner method-layout">
           <div class="method-intro">
@@ -166,26 +203,50 @@
             </p>
           </div>
 
-          <div class="method-grid" aria-label="正在建设的项目路线">
-            <article class="method-card reveal">
-              <span>01</span>
-              <h3>financial-rag-eval</h3>
-              <p>金融文档 RAG、引用溯源、摘要质量评测和信用 memo 生成，重点放在可复现评测而不是漂亮 demo。</p>
+          <div class="method-grid track-list" aria-label="正在建设的项目路线">
+            <article class="method-card track-card reveal">
+              <span class="track-index">01</span>
+              <div>
+                <div class="track-head">
+                  <h3>financial-rag-eval</h3>
+                  <span class="status-pill building">Building</span>
+                </div>
+                <p>金融文档 RAG、引用溯源、摘要质量评测和信用 memo 生成，重点放在可复现评测而不是漂亮 demo。</p>
+              </div>
+              <p class="track-next"><strong>Next</strong> retrieval v0 + citation report</p>
             </article>
-            <article class="method-card reveal">
-              <span>02</span>
-              <h3>crypto-quant-lab</h3>
-              <p>加密资产量化研究框架，先完成数据读取、基线策略、手续费/滑点、风险指标和报告输出。</p>
+            <article class="method-card track-card reveal">
+              <span class="track-index">02</span>
+              <div>
+                <div class="track-head">
+                  <h3>crypto-quant-lab</h3>
+                  <span class="status-pill planned">Separate thread</span>
+                </div>
+                <p>加密资产量化研究框架，先完成数据读取、基线策略、手续费/滑点、风险指标和报告输出。</p>
+              </div>
+              <p class="track-next"><strong>Next</strong> sync repo link after access</p>
             </article>
-            <article class="method-card reveal">
-              <span>03</span>
-              <h3>llm-learning-log</h3>
-              <p>系统记录 LLM、Agent、评测、系统工程和开源协作的学习过程，用项目复盘替代泛泛笔记。</p>
+            <article class="method-card track-card reveal">
+              <span class="track-index">03</span>
+              <div>
+                <div class="track-head">
+                  <h3>llm-learning-log</h3>
+                  <span class="status-pill ongoing">Ongoing</span>
+                </div>
+                <p>系统记录 LLM、Agent、评测、系统工程和开源协作的学习过程，用项目复盘替代泛泛笔记。</p>
+              </div>
+              <p class="track-next"><strong>Next</strong> first learning note repo</p>
             </article>
-            <article class="method-card reveal">
-              <span>04</span>
-              <h3>open-source-log</h3>
-              <p>记录真实开源贡献，包括 issue、PR、review、失败原因和维护者反馈。</p>
+            <article class="method-card track-card reveal">
+              <span class="track-index">04</span>
+              <div>
+                <div class="track-head">
+                  <h3>open-source-log</h3>
+                  <span class="status-pill planned">Planned</span>
+                </div>
+                <p>记录真实开源贡献，包括 issue、PR、review、失败原因和维护者反馈。</p>
+              </div>
+              <p class="track-next"><strong>Next</strong> first external issue or PR</p>
             </article>
           </div>
         </div>
@@ -225,7 +286,7 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Finance AI</span>
-                    <span>Building</span>
+                    <span class="status-pill building">Building</span>
                   </div>
                   <h3>Financial RAG & Credit Memo Eval</h3>
                   <p>面向金融文档的 RAG、引用溯源、摘要质量评测和信用 memo 生成。</p>
@@ -249,7 +310,7 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Quant Research</span>
-                    <span>Planned v0</span>
+                    <span class="status-pill planned">Planned v0</span>
                   </div>
                   <h3>Crypto Quant Lab</h3>
                   <p>加密资产量化研究框架：数据、回测、风险指标、交易成本和报告。</p>
@@ -272,7 +333,7 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Learning Log</span>
-                    <span>Ongoing</span>
+                    <span class="status-pill ongoing">Ongoing</span>
                   </div>
                   <h3>LLM Learning Log</h3>
                   <p>记录 LLM、Agent、评测、工程实践和开源协作的系统学习过程。</p>
@@ -295,10 +356,10 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Creative Lab</span>
-                    <span>2024</span>
+                    <span class="status-pill side">Side</span>
                   </div>
                   <h3>创作实验室</h3>
-                  <p>以“闫家欢”发布的单曲《把坏天气留在楼下》已上线网易云；音乐、小说和短视频保留为创造力副线，不作为 AI 工程主证据。</p>
+                  <p>个人单曲《把坏天气留在楼下》已上线网易云；音乐、小说和短视频保留为创造力副线，不作为 AI 工程主证据。</p>
                   <div class="tag-row" aria-label="项目标签">
                     <span>网易云音乐</span>
                     <span>Creative side</span>
@@ -488,6 +549,6 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js?v=20260601-evidence"></script>
+    <script src="script.js?v=20260603-interface"></script>
   </body>
 </html>
