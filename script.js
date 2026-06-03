@@ -28,20 +28,20 @@ const caseStudies = {
     linkText: "查看 GitHub 主页与后续公开项目"
   },
   "crypto-quant-lab": {
-    type: "Quant Research / Baseline ready",
+    type: "Quant Research / Public repo",
     title: "Crypto Quant Freqtrade Lab",
-    summary: "一个基于 Freqtrade、OKX futures 数据和 Codex 工作流的加密资产量化研究工作区。它已经完成本地公开安全基线提交，等待创建 GitHub 远程仓库并发布。",
-    role: "Freqtrade 策略工程、dry-run 运营、回测记录、公开版 repo 基线整理",
+    summary: "一个基于 Freqtrade、OKX futures 数据和 Codex 工作流的加密资产量化研究仓库。它已经发布公开安全基线，保留回测记录、失败实验和风险边界，不做收益承诺。",
+    role: "Freqtrade 策略工程、dry-run 运营、回测记录、公开版 repo 发布",
     focus: "Freqtrade、OKX futures、dry-run、失败策略归档、风险边界",
     year: "2026",
     points: [
-      "本地 repo 已在 main 分支完成首个公开安全提交：0d48274 Create public-safe crypto quant lab baseline。",
+      "GitHub main 已发布公开安全基线；本地来源提交为 0d48274 Create public-safe crypto quant lab baseline。",
       "公开基线包含 README、.gitignore、docs/results_summary.md、V4/V5/Momentum/Multi-Asset 策略代码、Moonshot radar 和失败策略记录。",
       "数据、日志、SQLite、backtest zip、内部 handoff 和真实配置已被隔离；公开表达只强调工程流程、回测证据和风险意识。"
     ],
-    next: "创建 GitHub 远程仓库 crypto-quant-freqtrade-lab，推送 main，然后把这里的链接替换为项目 repo。",
-    link: "https://github.com/jiahuanyan123-source",
-    linkText: "GitHub repo 发布后替换为项目链接"
+    next: "下一步补充最小 CI：Python 语法检查、README 复现命令和 public-safe 文件清单。",
+    link: "https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab",
+    linkText: "查看 crypto-quant-freqtrade-lab"
   },
   "llm-learning-log": {
     type: "Learning Log / Ongoing",
