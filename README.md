@@ -13,7 +13,7 @@ Live site: [GitHub Pages deployment](https://jiahuanyan123-source.github.io/)
 
 ## 正在建设的项目方向
 
-- `financial-rag-eval`: 金融文档 RAG、引用溯源、摘要质量评测和信用研究 memo 生成。
+- `financial-rag-eval`: 已公开为 `financial-ai-doc-intelligence`，包含金融文档 RAG 评测 v0、CLI、单元测试、报告和 CI。
 - `crypto-quant-lab`: 加密资产量化研究框架，先做数据、回测、手续费/滑点、风险指标和报告生成。
 - `llm-learning-log`: 记录 LLM、Agent、评测、系统工程和开源贡献的学习过程。
 - Open-source contribution log: 记录未来对真实开源项目的 issue、PR、review 和复盘。
