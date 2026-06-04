@@ -884,6 +884,46 @@ section[id] {
   display: block;
 }
 
+.evidence-facts {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 2px 0 0;
+  overflow: hidden;
+}
+
+.evidence-facts div {
+  background: color-mix(in srgb, var(--surface-2) 72%, transparent);
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 9px 10px;
+}
+
+.evidence-facts div + div {
+  border-left: 1px solid var(--line);
+}
+
+.evidence-facts dt {
+  color: var(--accent);
+  font-size: 0.66rem;
+  font-weight: 860;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.evidence-facts dd {
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.25;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .tag-row {
   display: flex;
   flex-wrap: wrap;
@@ -1504,6 +1544,15 @@ section[id] {
   .work-card,
   .work-card.featured {
     grid-column: 1;
+  }
+
+  .evidence-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-facts div + div {
+    border-left: 0;
+    border-top: 1px solid var(--line);
   }
 
   .featured h3 {
