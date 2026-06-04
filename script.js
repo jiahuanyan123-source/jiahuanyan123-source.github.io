@@ -39,7 +39,7 @@ const caseStudies = {
       "包含 README、结果摘要、策略代码、Moonshot radar 和失败策略记录。",
       "未发布数据、日志、SQLite、backtest zip、内部 handoff 或真实配置。"
     ],
-    next: "Python 语法检查 CI 已成功运行；下一步补 README 复现命令和 public-safe 文件清单。",
+    next: "Python 语法检查 CI 和 README 复现清单已完成；下一步补数据下载指引和 walk-forward 命令。",
     link: "https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab",
     linkText: "查看 crypto-quant-freqtrade-lab"
   },
