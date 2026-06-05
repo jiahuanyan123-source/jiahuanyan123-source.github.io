@@ -14,16 +14,16 @@ const caseStudies = {
   "financial-rag-eval": {
     type: "Finance AI / Public repo",
     title: "Financial RAG & Credit Memo Eval",
-    summary: "金融文档 RAG 评测公开基线。包含 CLI、单元测试、确定性检索评测、Markdown/JSON 报告和 GitHub Actions。",
+    summary: "金融文档 RAG 评测公开基线。包含 CLI、单元测试、单/多文档检索评测、Markdown/JSON 报告和 GitHub Actions。",
     role: "问题定义、检索评测、CLI 工程、报告生成",
     focus: "金融文档 RAG、引用溯源、确定性评测",
     year: "2026",
     points: [
-      "公开 repo 已包含样本文档、token-overlap 检索、one-line neighbor expansion 和 eval-rag CLI。",
-      "本地 6 个单元测试通过；4 个合成案例的 line recall@k、expected-term coverage@k 和 pass rate 均为 100.00%。",
+      "公开 repo 已包含合成单文档/多文档样本、eval-rag CLI、Markdown/JSON 报告和 GitHub Actions。",
+      "source-prior 多文档检索改进已公开：line recall@k 87.50%，distractor leak rate@k 5.00%，pass rate 50.00%，CI 成功。",
       "限制：样本是合成文档，不是生产 RAG、不是 LLM benchmark，也不证明信用判断质量。"
     ],
-    next: "加入多文档干扰样本，比较 token-overlap baseline 与本地 embedding retrieval，并继续记录失败案例。",
+    next: "补 retrieval comparison table：token-overlap baseline、source-prior baseline 与本地 embedding retrieval；继续记录失败案例。",
     link: "https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence",
     linkText: "查看 financial-ai-doc-intelligence"
   },

@@ -18,7 +18,7 @@
     <link rel="canonical" href="https://jiahuanyan123-source.github.io/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="assets/hero-workspace.png" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css?v=20260604-finrag-public">
+    <link rel="stylesheet" href="styles.css?v=20260605-finrag-source-prior">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -107,7 +107,7 @@
 
             <aside class="hero-note" aria-label="当前状态">
               <span class="hero-note-label">Current</span>
-              <p>已发布 Crypto Quant Freqtrade Lab 和 Financial AI Doc Intelligence。下一步补多文档评测和开源贡献记录。</p>
+              <p>已发布 Crypto Quant Freqtrade Lab 和 Financial AI Doc Intelligence。Financial RAG 已补 source-prior 多文档评测：distractor leak 5.00%，CI 成功。</p>
               <div class="hero-note-meta">
                 <span>No unsupported claims</span>
                 <span>Updated Jun 2026</span>
@@ -177,11 +177,11 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Finance AI</span>
-                    <span class="status-pill ready">Baseline ready</span>
+                    <span class="status-pill ready">Eval improved</span>
                   </div>
                   <h3>Financial RAG & Credit Memo Eval</h3>
-                  <p>金融文档 RAG 评测公开基线。包含 CLI、测试、评测报告和 GitHub Actions。</p>
-                  <p class="case-note">下一步：加入多文档干扰样本，检查 source attribution。</p>
+                  <p>金融文档 RAG 评测公开基线。包含 CLI、测试、单/多文档评测报告和 GitHub Actions。</p>
+                  <p class="case-note">已验证：source-prior 将 multi-doc distractor leak 从 35.00% 降到 5.00%；仍不是生产 RAG。</p>
                   <dl class="evidence-facts" aria-label="项目证据状态">
                     <div>
                       <dt>Repo</dt>
@@ -189,11 +189,11 @@
                     </div>
                     <div>
                       <dt>Verify</dt>
-                      <dd>tests + eval</dd>
+                      <dd>8 tests + CI</dd>
                     </div>
                     <div>
                       <dt>Next</dt>
-                      <dd>multi-doc eval</dd>
+                      <dd>retrieval compare</dd>
                     </div>
                   </dl>
                   <div class="tag-row" aria-label="项目标签">
@@ -336,9 +336,9 @@
                   <h3>financial-rag-eval</h3>
                   <span class="status-pill ready">Baseline ready</span>
                 </div>
-                <p>公开 repo 已发布，包含样本文档、确定性检索评测、Markdown/JSON 报告和 GitHub Actions。</p>
+                <p>公开 repo 已发布，包含样本文档、确定性检索评测、Markdown/JSON 报告和 GitHub Actions。source-prior 改进已通过 CI。</p>
               </div>
-              <p class="track-next"><strong>Next</strong> multi-doc eval + distractors</p>
+              <p class="track-next"><strong>Next</strong> retrieval comparison table</p>
             </article>
             <article class="method-card track-card reveal">
               <span class="track-index">02</span>
@@ -390,8 +390,8 @@
           <div class="timeline" aria-label="近期记录">
             <article class="timeline-item reveal">
               <time datetime="2026-06">2026.06</time>
-              <h3>Financial AI Doc Intelligence 发布</h3>
-              <p>公开金融文档 RAG 评测 v0：6 个单元测试通过，4 个合成案例检索评测通过，GitHub Actions 成功。</p>
+              <h3>Financial AI Doc Intelligence 更新</h3>
+              <p>公开金融文档 RAG 评测加入 source-prior 多文档检索：8 个单元测试通过，multi-doc distractor leak 5.00%，GitHub Actions 成功。</p>
             </article>
             <article class="timeline-item reveal">
               <time datetime="2026-06">2026.06</time>
@@ -529,6 +529,6 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js?v=20260604-finrag-public"></script>
+    <script src="script.js?v=20260605-finrag-source-prior"></script>
   </body>
 </html>
