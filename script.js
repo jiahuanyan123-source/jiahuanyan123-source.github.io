@@ -21,9 +21,10 @@ const caseStudies = {
     points: [
       "公开 repo 已包含合成单文档/多文档样本、eval-rag CLI、Markdown/JSON 报告和 GitHub Actions。",
       "source-prior 多文档检索改进已公开：line recall@k 87.50%，distractor leak rate@k 5.00%，pass rate 50.00%，CI 成功。",
+      "retrieval comparison report 已公开：embedding retrieval 仍标记为 not implemented，没有提前编造指标。",
       "限制：样本是合成文档，不是生产 RAG、不是 LLM benchmark，也不证明信用判断质量。"
     ],
-    next: "补 retrieval comparison table：token-overlap baseline、source-prior baseline 与本地 embedding retrieval；继续记录失败案例。",
+    next: "实现本地 embedding retrieval，并只在同一 fixture、top-k 和指标下与 source-prior baseline 对比；不改善就不推广。",
     link: "https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence",
     linkText: "查看 financial-ai-doc-intelligence"
   },

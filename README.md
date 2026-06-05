@@ -13,7 +13,7 @@ Live site: [GitHub Pages deployment](https://jiahuanyan123-source.github.io/)
 
 ## 正在建设的项目方向
 
-- `financial-rag-eval`: 已公开为 `financial-ai-doc-intelligence`，包含金融文档 RAG 评测、CLI、单/多文档检索评测、报告和 CI；source-prior 版本把 multi-doc distractor leak 从 35.00% 降到 5.00%。
+- `financial-rag-eval`: 已公开为 `financial-ai-doc-intelligence`，包含金融文档 RAG 评测、CLI、单/多文档检索评测、报告和 CI；retrieval comparison report 已公开，source-prior 版本把 multi-doc distractor leak 从 35.00% 降到 5.00%。
 - `crypto-quant-lab`: 加密资产量化研究框架，先做数据、回测、手续费/滑点、风险指标和报告生成。
 - `llm-learning-log`: 记录 LLM、Agent、评测、系统工程和开源贡献的学习过程。
 - Open-source contribution log: 记录未来对真实开源项目的 issue、PR、review 和复盘。
@@ -54,7 +54,7 @@ http://localhost:5173
 
 ## 下一步
 
-1. 给 Financial RAG 补 retrieval comparison table。
+1. 给 Financial RAG 做 local embedding retrieval comparison。
 2. 跑 Crypto Quant walk-forward 并填公开结果摘要。
 3. 建立 LLM learning log repo。
 4. 持续记录开源贡献和学习复盘。
