@@ -11,6 +11,14 @@ Live site: [GitHub Pages deployment](https://jiahuanyan123-source.github.io/)
 - Portfolio site: 展示身份定位、项目路线、学习记录和联系方式。
 - Project evidence: 用独立 GitHub repo 展示可运行代码、测试、实验报告、复现步骤和局限性。
 
+## AI 协作方法论
+
+这个仓库已经加入一套轻量的 AI coding 工作协议，用来让 Codex 或其他 AI 编程代理持续围绕证据建设，而不是只做表面优化：
+
+- [`AGENTS.md`](AGENTS.md): 项目的长期上下文、最终目标、验证标准和写作边界。
+- [`docs/ai-collaboration-playbook.md`](docs/ai-collaboration-playbook.md): Codex-maxxing / agentic coding 的实际工作流、提示词模板和每周循环。
+- [`docs/project-evidence-rubric.md`](docs/project-evidence-rubric.md): 项目从 idea 到 external signal 的证据评分表，决定哪些内容可以被放进主页。
+
 ## 正在建设的项目方向
 
 - `financial-rag-eval`: 已公开为 `financial-ai-doc-intelligence`，包含金融文档 RAG 评测、CLI、单/多文档检索评测、报告和 CI；retrieval comparison report 已公开，source-prior 版本把 multi-doc distractor leak 从 35.00% 降到 5.00%。
