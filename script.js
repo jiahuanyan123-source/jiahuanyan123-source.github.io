@@ -4,7 +4,6 @@ const scrollProgress = document.querySelector("[data-scroll-progress]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const workCards = document.querySelectorAll(".work-card");
-const reveals = document.querySelectorAll(".reveal");
 const navLinks = document.querySelectorAll(".site-nav a[href^='#']");
 const caseDialog = document.querySelector("[data-case-dialog]");
 const caseClose = document.querySelector("[data-case-close]");
@@ -61,12 +60,12 @@ const caseStudies = {
     linkText: "查看 GitHub 主页"
   },
   "creative-lab": {
-    type: "Creative Side Project / 2024",
+    type: "Creative Side Project / Music",
     title: "创作实验室",
     summary: "个人创作副线。已发布网易云音乐单曲。",
-    role: "音乐发布、小说写作、短视频实验",
+    role: "歌曲创作与发布；网易云音乐：闫家欢",
     focus: "个人创造力副线",
-    year: "2024",
+    year: "已发布",
     points: [
       "已在网易云音乐发布单曲《把坏天气留在楼下》。",
       "不作为 AI 工程能力的主要证明。",
@@ -80,19 +79,8 @@ const caseStudies = {
 
 let previousFocus = null;
 
-try {
-  const storedTheme = localStorage.getItem("portfolio-theme");
-  if (storedTheme === "light" || storedTheme === "dark") {
-    root.dataset.theme = storedTheme;
-  }
-} catch {
-  // Storage may be unavailable in private or restricted browser contexts.
-}
-
 function refreshIcons() {
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  window.lucide?.createIcons();
 }
 
 function updateThemeIcon() {
@@ -106,6 +94,7 @@ function updateThemeIcon() {
   themeToggle.setAttribute("aria-label", label);
   themeToggle.setAttribute("title", label);
   themeToggle.setAttribute("aria-pressed", String(dark));
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", dark ? "#191b1c" : "#ffffff");
   refreshIcons();
 }
 
@@ -115,26 +104,23 @@ themeToggle?.addEventListener("click", () => {
   try {
     localStorage.setItem("portfolio-theme", nextTheme);
   } catch {
-    // Keep the current-session theme and other controls working without storage.
+    // Keep controls working when browser storage is unavailable.
   }
   updateThemeIcon();
 });
 
 function updateScrollState() {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollable = root.scrollHeight - window.innerHeight;
   const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
   let activeLink = null;
   navLinks.forEach((link) => {
     const section = document.querySelector(link.getAttribute("href"));
-    if (section && section.getBoundingClientRect().top <= window.innerHeight * 0.36) {
-      activeLink = link;
-    }
+    if (section && section.getBoundingClientRect().top <= window.innerHeight * 0.36) activeLink = link;
   });
-
+  // The last section can be too short to reach the usual active-link threshold.
+  if (scrollable > 0 && window.scrollY >= scrollable - 2) activeLink = navLinks[navLinks.length - 1];
   header?.classList.toggle("scrolled", window.scrollY > 12);
-  if (scrollProgress) {
-    scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
-  }
+  if (scrollProgress) scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
   navLinks.forEach((link) => {
     link.classList.toggle("active", link === activeLink);
     if (link === activeLink) link.setAttribute("aria-current", "location");
@@ -142,47 +128,45 @@ function updateScrollState() {
   });
 }
 
-window.addEventListener("scroll", updateScrollState, { passive: true });
-window.addEventListener("resize", updateScrollState);
+let scrollFrame = null;
+function scheduleScrollState() {
+  if (scrollFrame !== null) return;
+  scrollFrame = requestAnimationFrame(() => {
+    scrollFrame = null;
+    updateScrollState();
+  });
+}
+window.addEventListener("scroll", scheduleScrollState, { passive: true });
+window.addEventListener("resize", scheduleScrollState);
+window.addEventListener("pageshow", scheduleScrollState);
 
 filterButtons.forEach((button) => {
-  button.setAttribute("aria-pressed", button.classList.contains("active").toString());
-
+  button.setAttribute("aria-pressed", String(button.classList.contains("active")));
   button.addEventListener("click", () => {
     const filter = button.dataset.filter;
-
     filterButtons.forEach((item) => {
       item.classList.toggle("active", item === button);
-      item.setAttribute("aria-pressed", (item === button).toString());
+      item.setAttribute("aria-pressed", String(item === button));
     });
-
     workCards.forEach((card) => {
-      const shouldShow = filter === "all" || card.dataset.category === filter;
-      card.classList.toggle("is-hidden", !shouldShow);
+      card.classList.toggle("is-hidden", filter !== "all" && card.dataset.category !== filter);
     });
+    const visibleCount = [...workCards].filter((card) => !card.classList.contains("is-hidden")).length;
+    document.querySelector("[data-filter-status]").textContent = `显示 ${visibleCount} 个项目与作品`;
     updateScrollState();
   });
 });
 
 function fillCaseDialog(caseStudy) {
-  caseDialog.querySelector("[data-case-type]").textContent = caseStudy.type;
-  caseDialog.querySelector("[data-case-title]").textContent = caseStudy.title;
-  caseDialog.querySelector("[data-case-summary]").textContent = caseStudy.summary;
-  caseDialog.querySelector("[data-case-role]").textContent = caseStudy.role;
-  caseDialog.querySelector("[data-case-focus]").textContent = caseStudy.focus;
-  caseDialog.querySelector("[data-case-year]").textContent = caseStudy.year;
-  caseDialog.querySelector("[data-case-next]").textContent = caseStudy.next;
-
+  for (const key of ["type", "title", "summary", "role", "focus", "year", "next"]) {
+    caseDialog.querySelector(`[data-case-${key}]`).textContent = caseStudy[key];
+  }
   const caseLink = caseDialog.querySelector("[data-case-link]");
-  const caseLinkText = caseDialog.querySelector("[data-case-link-text]");
+  caseLink.hidden = !caseStudy.link;
   if (caseStudy.link) {
     caseLink.href = caseStudy.link;
-    caseLinkText.textContent = caseStudy.linkText || "查看公开作品";
-    caseLink.hidden = false;
-  } else {
-    caseLink.hidden = true;
-    caseLink.removeAttribute("href");
-  }
+    caseDialog.querySelector("[data-case-link-text]").textContent = caseStudy.linkText || "查看公开作品";
+  } else caseLink.removeAttribute("href");
 
   const pointsList = caseDialog.querySelector("[data-case-points]");
   pointsList.replaceChildren();
@@ -195,53 +179,36 @@ function fillCaseDialog(caseStudy) {
 
 caseTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
+    // Preserve native new-tab and new-window behavior for modified clicks.
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const caseStudy = caseStudies[trigger.dataset.case];
     if (!caseDialog || !caseStudy || typeof caseDialog.showModal !== "function") return;
-
     event.preventDefault();
-    previousFocus = document.activeElement;
+    previousFocus = trigger;
     fillCaseDialog(caseStudy);
-
-    caseDialog.querySelector(".case-dialog-panel").scrollTop = 0;
     caseDialog.showModal();
+    caseDialog.querySelector(".case-dialog-panel").scrollTop = 0;
     document.body.classList.add("locked");
     refreshIcons();
   });
 });
-
 caseClose?.addEventListener("click", () => caseDialog?.close());
 
+function isBackdropEvent(event) {
+  if (event.target !== caseDialog) return false;
+  const rect = caseDialog.getBoundingClientRect();
+  return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+}
+let backdropPointerDown = false;
+caseDialog?.addEventListener("pointerdown", (event) => { backdropPointerDown = isBackdropEvent(event); });
 caseDialog?.addEventListener("click", (event) => {
-  if (event.target === caseDialog) {
-    caseDialog.close();
-  }
+  if (backdropPointerDown && isBackdropEvent(event)) caseDialog.close();
+  backdropPointerDown = false;
 });
-
 caseDialog?.addEventListener("close", () => {
   document.body.classList.remove("locked");
-  if (previousFocus instanceof HTMLElement) {
-    previousFocus.focus();
-  }
+  if (previousFocus instanceof HTMLElement) previousFocus.focus({ preventScroll: true });
 });
-
-if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          entry.target.classList.remove("reveal-pending");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.16 }
-  );
-  reveals.forEach((item) => {
-    observer.observe(item);
-    item.classList.add("reveal-pending");
-  });
-}
 
 updateThemeIcon();
 refreshIcons();

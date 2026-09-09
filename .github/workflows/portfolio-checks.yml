@@ -2,7 +2,7 @@ name: Portfolio checks
 
 on:
   push:
-    branches: [main, "portfolio/**"]
+    branches: [main, "portfolio/**", "codex/portfolio-**"]
   pull_request:
     branches: [main]
   workflow_dispatch:

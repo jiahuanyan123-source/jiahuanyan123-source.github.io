@@ -16,9 +16,12 @@ export default defineConfig({
   },
   projects: [
     { name: "desktop", use: { viewport: { width: 1440, height: 1000 } } },
+    { name: "short-desktop", use: { viewport: { width: 1280, height: 720 } } },
+    { name: "wide", use: { viewport: { width: 1920, height: 1080 } } },
     { name: "tablet", use: { viewport: { width: 768, height: 1024 } } },
     { name: "mobile", use: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } },
-    { name: "small-mobile", use: { viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true } }
+    { name: "small-mobile", use: { viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true } },
+    { name: "narrow-mobile", use: { viewport: { width: 320, height: 740 }, isMobile: true, hasTouch: true } }
   ],
   webServer: {
     command: "python -m http.server 4173 --bind 127.0.0.1",
