@@ -100,6 +100,8 @@ test("page loads local assets and readable project evidence", async ({ page }, t
   await expect(page.locator('.report-bars')).toContainText("5%");
   await page.screenshot({ path: testInfo.outputPath("projects.png") });
   await page.locator('[data-category="finance"]').screenshot({ path: testInfo.outputPath("financial-project.png") });
+  await page.mouse.move(0, 0);
+  await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({ path: testInfo.outputPath("full-page.png"), fullPage: true });
   expect(errors).toEqual([]);
   expect(externalRequests).toEqual([]);

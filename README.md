@@ -59,7 +59,7 @@ npx playwright install chromium
 npm test
 ```
 
-Playwright 会临时启动本地测试服务器，覆盖桌面、平板、390px 和 360px 手机视口，检查主题持久化、项目筛选、弹窗焦点恢复、导航、报告链接、受限存储及禁用 JavaScript 的情况。
+Playwright 会临时启动本地测试服务器，覆盖 7 种视口（1920、1440、1280、768、390、360、320px），检查首屏构图、横向溢出、主题持久化、项目筛选、长弹窗关闭、键盘焦点、组合键点击、导航、报告链接、受限存储及禁用 JavaScript 的情况。包含 98 项浏览器检查，并保留完整页面与交互截图。
 
 [Portfolio checks](https://github.com/jiahuanyan123-source/jiahuanyan123-source.github.io/actions/workflows/portfolio-checks.yml) 在 push / PR 时运行，测试报告和截图保存在该次运行的 `portfolio-browser-checks` artifact 中，保留 14 天。它检查本站交互，不代表已复现两个技术项目的实验结果。
 
@@ -67,7 +67,7 @@ Lucide 固定版本记录在 `package-lock.json` 中。升级时运行 `npm run 
 
 ## 部署
 
-这个仓库使用 GitHub Pages 部署。推送到 `main` 分支后，GitHub 会自动更新线上页面。当前 Pages 与测试独立运行；先在 `portfolio/` 分支跑完检查，再合入 `main`。
+这个仓库使用 GitHub Pages 部署。推送到 `main` 分支后，GitHub 会自动更新线上页面。当前 Pages 与测试独立运行；先在 `codex/portfolio-*` 或 `portfolio/` 分支跑完检查并核对截图，再合入 `main`。
 
 ## 下一步
 
@@ -77,3 +77,5 @@ Lucide 固定版本记录在 `package-lock.json` 中。升级时运行 `npm run 
 4. 持续记录开源贡献和学习复盘。
 
 本轮核对记录：[2026-09-09 项目恢复](docs/restart-2026-09-09.md)。
+
+设计与交互改版：[2026-09-09 Studio 改版](docs/design-2026-09-09.md)。

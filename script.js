@@ -194,6 +194,21 @@ caseTriggers.forEach((trigger) => {
 });
 caseClose?.addEventListener("click", () => caseDialog?.close());
 
+caseDialog?.addEventListener("keydown", (event) => {
+  if (event.key !== "Tab") return;
+  const focusable = [...caseDialog.querySelectorAll('button:not([disabled]), a[href], [tabindex="0"]')]
+    .filter((element) => element.getClientRects().length > 0);
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last?.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first?.focus();
+  }
+});
+
 function isBackdropEvent(event) {
   if (event.target !== caseDialog) return false;
   const rect = caseDialog.getBoundingClientRect();
