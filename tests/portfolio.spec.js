@@ -11,6 +11,7 @@ test("page loads local assets and readable project evidence", async ({ page }, t
   await expect(page).toHaveTitle("NingQian 宁谦 | AI Engineering Portfolio");
   await expect(page.locator(".hero-image")).toHaveJSProperty("naturalWidth", 1536);
   await expect(page.locator("[data-theme-toggle] svg")).toHaveCount(1);
+  await expect(page.locator("i[data-lucide]")).toHaveCount(0);
   await page.screenshot({ path: testInfo.outputPath("home.png") });
   await page.getByRole("link", { name: "看项目", exact: true }).click();
   await expect(page.locator(".work-card")).toHaveCount(4);
@@ -19,11 +20,12 @@ test("page loads local assets and readable project evidence", async ({ page }, t
   await expect(page.locator('[data-category="quant"] .evidence-facts')).toContainText("仅语法检查");
   await expect(page.locator('.work-visual.photo img')).toHaveJSProperty("naturalWidth", 1536);
   await page.screenshot({ path: testInfo.outputPath("projects.png") });
+  await page.locator('[data-category="finance"]').screenshot({ path: testInfo.outputPath("financial-project.png") });
   expect(errors).toEqual([]);
   expect(externalRequests).toEqual([]);
 });
 
-test("theme icon, accessible label and saved preference follow repeated toggles", async ({ page }) => {
+test("theme icon, accessible label and saved preference follow repeated toggles", async ({ page }, testInfo) => {
   await page.goto("/");
   const toggle = page.locator("[data-theme-toggle]");
   for (const theme of ["dark", "light", "dark"]) {
@@ -36,6 +38,7 @@ test("theme icon, accessible label and saved preference follow repeated toggles"
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect(toggle.locator("svg")).toHaveAttribute("data-lucide", "sun");
+  await page.screenshot({ path: testInfo.outputPath("dark-home.png") });
 });
 
 test("filters select the correct cards and restore all projects", async ({ page }) => {
