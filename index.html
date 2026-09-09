@@ -18,7 +18,7 @@
     <link rel="canonical" href="https://jiahuanyan123-source.github.io/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" as="image" href="assets/hero-workspace.png" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css?v=20260605-finrag-comparison">
+    <link rel="stylesheet" href="styles.css?v=20260909-verified">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,7 +55,7 @@
           <span></span>
           Evidence Board
         </a>
-        <button class="icon-button" type="button" data-theme-toggle aria-label="切换深浅主题">
+        <button class="icon-button" type="button" data-theme-toggle aria-label="切换到深色主题" title="切换到深色主题" aria-pressed="false" hidden>
           <i data-lucide="moon"></i>
         </button>
       </div>
@@ -101,16 +101,16 @@
           <div class="hero-proof" aria-label="作品集证据标准">
             <span><i data-lucide="git-branch"></i> 2 public repos</span>
             <span><i data-lucide="flask-conical"></i> RAG eval + CI</span>
-            <span><i data-lucide="file-check-2"></i> open log planned</span>
+            <span><i data-lucide="file-check-2"></i> reviewed 2026.09.09</span>
           </div>
             </div>
 
             <aside class="hero-note" aria-label="当前状态">
               <span class="hero-note-label">Current</span>
-              <p>已发布 Crypto Quant Freqtrade Lab 和 Financial AI Doc Intelligence。Financial RAG 已公开 retrieval comparison report，下一步只比较 embedding retrieval 是否真的更好。</p>
+              <p>本轮重新核对了两个公开技术项目。金融 RAG 保留合成样本评测基线，量化分窗口验证仍待完成；下一步优先扩充 RAG 测试集，再比较 embedding 检索。</p>
               <div class="hero-note-meta">
-                <span>No unsupported claims</span>
-                <span>Updated Jun 2026</span>
+                <span>报告与代码可直接查看</span>
+                <time datetime="2026-09-09">核对于 2026.09.09</time>
               </div>
             </aside>
           </div>
@@ -118,15 +118,15 @@
           <dl class="hero-stats" aria-label="个人作品集摘要">
             <div>
               <dt>2</dt>
-              <dd>Public repo</dd>
+              <dd>公开技术项目</dd>
             </div>
             <div>
-              <dt>3</dt>
-              <dd>Active tracks</dd>
+              <dt>RAG</dt>
+              <dd>合成样本基线</dd>
             </div>
             <div>
-              <dt>0</dt>
-              <dd>Unsupported claims</dd>
+              <dt>Quant</dt>
+              <dd>分窗口验证待完成</dd>
             </div>
           </dl>
         </div>
@@ -149,11 +149,11 @@
             <p class="section-kicker">Selected Work</p>
             <h2 id="work-title">已公开或正在建设的项目。</h2>
             <p>
-              点击卡片查看状态、链接和下一步。
+              金融文档检索、量化研究与个人创作。每个项目保留已完成的工作和当前限制。
             </p>
           </div>
 
-          <div class="filter-bar" role="group" aria-label="作品分类筛选">
+          <div class="filter-bar" role="group" aria-label="作品分类筛选" hidden>
             <button class="filter-button active" type="button" data-filter="all">全部</button>
             <button class="filter-button" type="button" data-filter="finance">金融 AI</button>
             <button class="filter-button" type="button" data-filter="quant">量化</button>
@@ -163,7 +163,7 @@
 
           <div class="work-grid">
             <article class="work-card featured reveal" data-category="finance">
-              <a href="#case-dialog" data-case="financial-rag-eval" aria-haspopup="dialog" aria-label="查看项目：Financial RAG & Credit Memo Eval">
+              <a href="https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence" data-case="financial-rag-eval" aria-haspopup="dialog" aria-label="查看项目：Financial RAG & Credit Memo Eval">
                 <figure class="work-visual photo">
                   <img
                     src="assets/hero-workspace.png"
@@ -177,11 +177,11 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Finance AI</span>
-                    <span class="status-pill ready">Eval improved</span>
+                    <span class="status-pill ready">合成样本基线</span>
                   </div>
                   <h3>Financial RAG & Credit Memo Eval</h3>
                   <p>金融文档 RAG 评测公开基线。包含 CLI、测试、单/多文档评测报告和 GitHub Actions。</p>
-                  <p class="case-note">已验证：source-prior 将 multi-doc distractor leak 从 35.00% 降到 5.00%；retrieval comparison report 已公开。</p>
+                  <p class="case-note">3 份合成文档、4 个用例，top-k = 5：干扰行混入率从 35% 降至 5%，用例通过率为 50%。结果仅代表这一小型测试集。</p>
                   <dl class="evidence-facts" aria-label="项目证据状态">
                     <div>
                       <dt>Repo</dt>
@@ -189,11 +189,11 @@
                     </div>
                     <div>
                       <dt>Verify</dt>
-                      <dd>8 tests + CI</dd>
+                      <dd>单元测试 + 检索评测</dd>
                     </div>
                     <div>
                       <dt>Next</dt>
-                      <dd>embedding compare</dd>
+                      <dd>扩充评测集</dd>
                     </div>
                   </dl>
                   <div class="tag-row" aria-label="项目标签">
@@ -203,10 +203,15 @@
                   </div>
                 </div>
               </a>
+              <footer class="work-links" aria-label="金融 RAG 公开证据">
+                <a href="https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i>代码</a>
+                <a href="https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence/blob/022dc44dc371767865f7d7f2ef9a1e6fb6f380c6/reports/retrieval_comparison.md" target="_blank" rel="noreferrer"><i data-lucide="file-chart-column" aria-hidden="true"></i>评测报告</a>
+                <a href="https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence/actions/workflows/python-checks.yml" target="_blank" rel="noreferrer"><i data-lucide="check-check" aria-hidden="true"></i>检查记录</a>
+              </footer>
             </article>
 
             <article class="work-card reveal" data-category="quant">
-              <a href="#case-dialog" data-case="crypto-quant-lab" aria-haspopup="dialog" aria-label="查看项目：Crypto Quant Freqtrade Lab">
+              <a href="https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab" data-case="crypto-quant-lab" aria-haspopup="dialog" aria-label="查看项目：Crypto Quant Freqtrade Lab">
                 <figure class="work-visual interface" aria-hidden="true">
                   <span></span>
                   <span></span>
@@ -215,10 +220,10 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Quant Research</span>
-                    <span class="status-pill ready">Baseline ready</span>
+                    <span class="status-pill building">待补验证</span>
                   </div>
                   <h3>Crypto Quant Freqtrade Lab</h3>
-                  <p>Freqtrade 加密量化研究仓库。已发布公开安全基线。</p>
+                  <p>Freqtrade 策略代码、历史回测摘要与失败实验归档。分窗口验证表尚未填写。</p>
                   <dl class="evidence-facts" aria-label="项目证据状态">
                     <div>
                       <dt>Repo</dt>
@@ -226,11 +231,11 @@
                     </div>
                     <div>
                       <dt>Verify</dt>
-                      <dd>26 files + CI</dd>
+                      <dd>仅语法检查</dd>
                     </div>
                     <div>
                       <dt>Next</dt>
-                      <dd>walk-forward summary</dd>
+                      <dd>分窗口结果</dd>
                     </div>
                   </dl>
                   <div class="tag-row" aria-label="项目标签">
@@ -240,10 +245,15 @@
                   </div>
                 </div>
               </a>
+              <footer class="work-links" aria-label="量化研究公开证据">
+                <a href="https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i>代码</a>
+                <a href="https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab/blob/f9d1c1be80bba41c2db59fdb89f42601022e092d/docs/results_summary.md" target="_blank" rel="noreferrer"><i data-lucide="file-chart-column" aria-hidden="true"></i>历史摘要</a>
+                <a href="https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab/blob/f9d1c1be80bba41c2db59fdb89f42601022e092d/docs/walk_forward_validation.md" target="_blank" rel="noreferrer"><i data-lucide="clipboard-list" aria-hidden="true"></i>待验证计划</a>
+              </footer>
             </article>
 
             <article class="work-card reveal" data-category="ai">
-              <a href="#case-dialog" data-case="llm-learning-log" aria-haspopup="dialog" aria-label="查看项目：LLM Learning Log">
+              <a href="#journal" data-case="llm-learning-log" aria-haspopup="dialog" aria-label="查看项目：LLM Learning Log">
                 <figure class="work-visual editorial" aria-hidden="true">
                   <span></span>
                   <span></span>
@@ -252,7 +262,7 @@
                 <div class="work-body">
                   <div class="work-meta">
                     <span>Learning Log</span>
-                    <span class="status-pill ongoing">Ongoing</span>
+                    <span class="status-pill planned">计划中</span>
                   </div>
                   <h3>LLM Learning Log</h3>
                   <p>LLM、Agent、评测和开源协作学习记录。待拆成独立 repo。</p>
@@ -263,7 +273,7 @@
                     </div>
                     <div>
                       <dt>Verify</dt>
-                      <dd>关联实验</dd>
+                      <dd>待发布</dd>
                     </div>
                     <div>
                       <dt>Next</dt>
@@ -280,7 +290,7 @@
             </article>
 
             <article class="work-card reveal" data-category="creative">
-              <a href="#case-dialog" data-case="creative-lab" aria-haspopup="dialog" aria-label="查看作品：创作实验室">
+              <a href="https://163cn.tv/79f4dcc" data-case="creative-lab" aria-haspopup="dialog" aria-label="查看作品：创作实验室">
                 <figure class="work-visual gallery" aria-hidden="true">
                   <span></span>
                   <span></span>
@@ -292,7 +302,7 @@
                     <span class="status-pill side">Side</span>
                   </div>
                   <h3>创作实验室</h3>
-                  <p>个人创作副线。已发布网易云音乐单曲。</p>
+                  <p>网易云音乐单曲《把坏天气留在楼下》，以及持续探索中的写作与短视频。</p>
                   <dl class="evidence-facts" aria-label="项目证据状态">
                     <div>
                       <dt>Link</dt>
@@ -313,6 +323,9 @@
                   </div>
                 </div>
               </a>
+              <footer class="work-links" aria-label="音乐作品">
+                <a href="https://163cn.tv/79f4dcc" target="_blank" rel="noreferrer"><i data-lucide="music" aria-hidden="true"></i>网易云收听</a>
+              </footer>
             </article>
           </div>
         </div>
@@ -322,9 +335,9 @@
         <div class="section-inner method-layout">
           <div class="method-intro">
             <p class="section-kicker">Project Queue</p>
-            <h2 id="build-title">下一步只做能变成仓库的项目。</h2>
+            <h2 id="build-title">下一步，从金融 RAG 开始。</h2>
             <p>
-              这里不写愿景，只写状态、下一步和能公开验证的交付物。
+              先扩充评测用例与失败分析，再在同一测试集上比较检索方法。量化验证与学习记录按顺序推进。
             </p>
           </div>
 
@@ -336,9 +349,9 @@
                   <h3>financial-rag-eval</h3>
                   <span class="status-pill ready">Baseline ready</span>
                 </div>
-                <p>公开 repo 已发布，包含样本文档、确定性检索评测、Markdown/JSON 报告和 GitHub Actions。retrieval comparison report 已公开且通过 CI。</p>
+                <p>已有 CLI、测试和检索对照报告。下一轮加入更多发行人、模糊名称和无答案问题，冻结测试集后再比较 embedding 检索。</p>
               </div>
-              <p class="track-next"><strong>Next</strong> local embedding comparison</p>
+              <p class="track-next"><strong>Next</strong> 扩充并冻结评测集</p>
             </article>
             <article class="method-card track-card reveal">
               <span class="track-index">02</span>
@@ -356,7 +369,7 @@
               <div>
                 <div class="track-head">
                   <h3>llm-learning-log</h3>
-                  <span class="status-pill ongoing">Ongoing</span>
+                  <span class="status-pill planned">Planned</span>
                 </div>
                 <p>把学习记录整理成独立 repo，关联代码、论文、issue 和实验。</p>
               </div>
@@ -388,6 +401,11 @@
           </div>
 
           <div class="timeline" aria-label="近期记录">
+            <article class="timeline-item reveal">
+              <time datetime="2026-09-09">2026.09.09</time>
+              <h3>恢复维护，重新核对项目证据</h3>
+              <p>补充报告直达入口与评测样本范围，区分语法检查和结果验证，并为作品集加入交互回归检查。</p>
+            </article>
             <article class="timeline-item reveal">
               <time datetime="2026-06">2026.06</time>
               <h3>Financial AI Doc Intelligence 更新</h3>
@@ -528,7 +546,7 @@
       </a>
     </footer>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js?v=20260605-finrag-comparison"></script>
+    <script src="assets/vendor/lucide.min.js"></script>
+    <script src="script.js?v=20260909-verified"></script>
   </body>
 </html>

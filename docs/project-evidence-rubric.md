@@ -73,6 +73,8 @@ Homepage label: `External signal`
 
 ## Current Track Assessment
 
+Historical assessment from June 2026, based on public artifacts rather than independent reproduction. For the September review and source commits, see [restart-2026-09-09.md](restart-2026-09-09.md). A level is a documentation aid, not a certification: syntax CI does not prove a quant strategy works, and the RAG comparison covers only four synthetic cases.
+
 | Track | Current Level | Why | Next Level-Up |
 | --- | ---: | --- | --- |
 | Financial AI Doc Intelligence | 3 | Public repo, CLI, tests, CI, generated reports, retrieval comparison, known failure modes | Add local embedding retrieval comparison and document whether it beats source-prior |

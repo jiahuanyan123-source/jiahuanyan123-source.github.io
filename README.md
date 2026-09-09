@@ -21,8 +21,8 @@ Live site: [GitHub Pages deployment](https://jiahuanyan123-source.github.io/)
 
 ## 正在建设的项目方向
 
-- `financial-rag-eval`: 已公开为 `financial-ai-doc-intelligence`，包含金融文档 RAG 评测、CLI、单/多文档检索评测、报告和 CI；retrieval comparison report 已公开，source-prior 版本把 multi-doc distractor leak 从 35.00% 降到 5.00%。
-- `crypto-quant-lab`: 加密资产量化研究框架，先做数据、回测、手续费/滑点、风险指标和报告生成。
+- `financial-rag-eval`: 已公开为 `financial-ai-doc-intelligence`。在 3 份合成文档、4 个用例、top-k = 5 的测试集上，source-prior 把干扰行混入率从 35% 降至 5%，用例通过率为 50%；这只代表该测试集上的检索表现。[对照报告](https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence/blob/022dc44dc371767865f7d7f2ef9a1e6fb6f380c6/reports/retrieval_comparison.md)。
+- `crypto-quant-lab`: 已公开为 `crypto-quant-freqtrade-lab`，包含策略、历史回测摘要和失败实验。CI 仅检查语法，分窗口验证表尚待填写。
 - `llm-learning-log`: 记录 LLM、Agent、评测、系统工程和开源贡献的学习过程。
 - Open-source contribution log: 记录未来对真实开源项目的 issue、PR、review 和复盘。
 
@@ -46,23 +46,34 @@ Live site: [GitHub Pages deployment](https://jiahuanyan123-source.github.io/)
 
 ## 本地预览
 
+直接打开 `index.html` 即可使用。页面和 Lucide 图标都在仓库中，不需要安装依赖或启动开发服务器。
+
+## 自动化检查
+
+仅开发与测试需要 Node.js 22+、Python 3 和 Chromium：
+
 ```powershell
-python -m http.server 5173
+npm ci
+npm run check
+npx playwright install chromium
+npm test
 ```
 
-然后打开：
+Playwright 会临时启动本地测试服务器，覆盖桌面、平板、390px 和 360px 手机视口，检查主题持久化、项目筛选、弹窗焦点恢复、导航、报告链接、受限存储及禁用 JavaScript 的情况。
 
-```text
-http://localhost:5173
-```
+[Portfolio checks](https://github.com/jiahuanyan123-source/jiahuanyan123-source.github.io/actions/workflows/portfolio-checks.yml) 在 push / PR 时运行，测试报告和截图保存在该次运行的 `portfolio-browser-checks` artifact 中，保留 14 天。它检查本站交互，不代表已复现两个技术项目的实验结果。
+
+Lucide 固定版本记录在 `package-lock.json` 中。升级时运行 `npm run vendor:icons` 同步页面资源与许可证。
 
 ## 部署
 
-这个仓库使用 GitHub Pages 部署。推送到 `main` 分支后，GitHub 会自动更新线上页面。
+这个仓库使用 GitHub Pages 部署。推送到 `main` 分支后，GitHub 会自动更新线上页面。当前 Pages 与测试独立运行；先在 `portfolio/` 分支跑完检查，再合入 `main`。
 
 ## 下一步
 
-1. 给 Financial RAG 做 local embedding retrieval comparison。
+1. 扩充 Financial RAG 的发行人、模糊名称与无答案用例，冻结评测集后做 embedding retrieval comparison。
 2. 跑 Crypto Quant walk-forward 并填公开结果摘要。
 3. 建立 LLM learning log repo。
 4. 持续记录开源贡献和学习复盘。
+
+本轮核对记录：[2026-09-09 项目恢复](docs/restart-2026-09-09.md)。

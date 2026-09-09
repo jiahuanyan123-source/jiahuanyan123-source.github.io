@@ -1,0 +1,16 @@
+{
+  "name": "ningqian-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check script.js && node --check tests/portfolio.spec.js",
+    "test": "playwright test",
+    "test:report": "playwright show-report",
+    "vendor:icons": "node scripts/vendor-icons.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "lucide": "1.43.0"
+  }
+}

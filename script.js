@@ -20,11 +20,11 @@ const caseStudies = {
     year: "2026",
     points: [
       "公开 repo 已包含合成单文档/多文档样本、eval-rag CLI、Markdown/JSON 报告和 GitHub Actions。",
-      "source-prior 多文档检索改进已公开：line recall@k 87.50%，distractor leak rate@k 5.00%，pass rate 50.00%，CI 成功。",
+      "报告范围：3 份合成文档、4 个用例、top-k = 5。source-prior 的 line recall@k 为 87.50%，干扰行混入率为 5.00%，用例通过率为 50.00%。",
       "retrieval comparison report 已公开：embedding retrieval 仍标记为 not implemented，没有提前编造指标。",
       "限制：样本是合成文档，不是生产 RAG、不是 LLM benchmark，也不证明信用判断质量。"
     ],
-    next: "实现本地 embedding retrieval，并只在同一 fixture、top-k 和指标下与 source-prior baseline 对比；不改善就不推广。",
+    next: "扩充发行人、模糊名称与无答案用例，冻结评测集；随后在同一 top-k 和指标下比较 embedding 与 source-prior 检索。",
     link: "https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence",
     linkText: "查看 financial-ai-doc-intelligence"
   },
@@ -36,16 +36,16 @@ const caseStudies = {
     focus: "Freqtrade、OKX futures、dry-run、失败策略归档、风险边界",
     year: "2026",
     points: [
-      "GitHub main 已发布 26 个公开安全基线文件。",
+      "已公开策略代码与研究文档；现有 CI 只检查 Python 语法，不验证策略运行或回测质量。",
       "包含 README、结果摘要、策略代码、Moonshot radar 和失败策略记录。",
-      "未发布数据、日志、SQLite、backtest zip、内部 handoff 或真实配置。"
+      "分窗口验证表仍为 pending，历史摘要不等于已完成独立复现或样本外验证。"
     ],
     next: "Python 语法检查 CI、README 复现清单和数据下载指引已完成；下一步补 walk-forward 验证摘要和 exact commands。",
     link: "https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab",
     linkText: "查看 crypto-quant-freqtrade-lab"
   },
   "llm-learning-log": {
-    type: "Learning Log / Ongoing",
+    type: "Learning Log / Planned",
     title: "LLM Learning Log",
     summary: "LLM、Agent、RAG、评测和开源协作学习记录。待拆成独立 repo。",
     role: "学习规划、代码练习、论文和项目复盘",
@@ -80,9 +80,13 @@ const caseStudies = {
 
 let previousFocus = null;
 
-const storedTheme = localStorage.getItem("portfolio-theme");
-if (storedTheme) {
-  root.dataset.theme = storedTheme;
+try {
+  const storedTheme = localStorage.getItem("portfolio-theme");
+  if (storedTheme === "light" || storedTheme === "dark") {
+    root.dataset.theme = storedTheme;
+  }
+} catch {
+  // Storage may be unavailable in private or restricted browser contexts.
 }
 
 function refreshIcons() {
@@ -92,16 +96,27 @@ function refreshIcons() {
 }
 
 function updateThemeIcon() {
-  const icon = themeToggle?.querySelector("i");
-  if (!icon) return;
-  icon.setAttribute("data-lucide", root.dataset.theme === "dark" ? "sun" : "moon");
+  if (!themeToggle) return;
+  const dark = root.dataset.theme === "dark";
+  const label = dark ? "切换到浅色主题" : "切换到深色主题";
+  const icon = document.createElement("i");
+  icon.setAttribute("data-lucide", dark ? "sun" : "moon");
+  icon.setAttribute("aria-hidden", "true");
+  themeToggle.replaceChildren(icon);
+  themeToggle.setAttribute("aria-label", label);
+  themeToggle.setAttribute("title", label);
+  themeToggle.setAttribute("aria-pressed", String(dark));
   refreshIcons();
 }
 
 themeToggle?.addEventListener("click", () => {
   const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = nextTheme;
-  localStorage.setItem("portfolio-theme", nextTheme);
+  try {
+    localStorage.setItem("portfolio-theme", nextTheme);
+  } catch {
+    // Keep the current-session theme and other controls working without storage.
+  }
   updateThemeIcon();
 });
 
@@ -122,6 +137,8 @@ function updateScrollState() {
   }
   navLinks.forEach((link) => {
     link.classList.toggle("active", link === activeLink);
+    if (link === activeLink) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
   });
 }
 
@@ -143,6 +160,7 @@ filterButtons.forEach((button) => {
       const shouldShow = filter === "all" || card.dataset.category === filter;
       card.classList.toggle("is-hidden", !shouldShow);
     });
+    updateScrollState();
   });
 });
 
@@ -178,17 +196,14 @@ function fillCaseDialog(caseStudy) {
 caseTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
     const caseStudy = caseStudies[trigger.dataset.case];
-    if (!caseDialog || !caseStudy) return;
+    if (!caseDialog || !caseStudy || typeof caseDialog.showModal !== "function") return;
 
     event.preventDefault();
     previousFocus = document.activeElement;
     fillCaseDialog(caseStudy);
 
-    if (typeof caseDialog.showModal === "function") {
-      caseDialog.showModal();
-    } else {
-      caseDialog.setAttribute("open", "");
-    }
+    caseDialog.querySelector(".case-dialog-panel").scrollTop = 0;
+    caseDialog.showModal();
     document.body.classList.add("locked");
     refreshIcons();
   });
@@ -209,20 +224,27 @@ caseDialog?.addEventListener("close", () => {
   }
 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.16 }
-);
-
-reveals.forEach((item) => observer.observe(item));
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          entry.target.classList.remove("reveal-pending");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16 }
+  );
+  reveals.forEach((item) => {
+    observer.observe(item);
+    item.classList.add("reveal-pending");
+  });
+}
 
 updateThemeIcon();
 refreshIcons();
 updateScrollState();
+if (themeToggle) themeToggle.hidden = false;
+document.querySelector(".filter-bar")?.removeAttribute("hidden");

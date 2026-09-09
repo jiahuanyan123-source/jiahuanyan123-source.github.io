@@ -56,3 +56,11 @@ Do not treat "looks good" as sufficient when a command, report, or screenshot ca
 - Keep unrelated refactors out of portfolio updates.
 - If local files are behind GitHub, prefer adding portable docs or first syncing before editing page copy.
 - Keep screenshots and local runtime artifacts out of Git.
+
+## Portfolio Checks
+
+- This remains a static site; opening `index.html` must work without a build.
+- Run `npm ci`, `npm run check`, and `npm test` for interaction changes. Browser tests need `npx playwright install chromium` and Python 3.
+- The `Portfolio checks` workflow covers four viewports and uploads reports/screenshots. Test on a `portfolio/` branch before publishing to `main`.
+- Report links should identify the reviewed commit; show the sample size and limits next to quantitative claims.
+- A fresh review date is not a fresh experiment. See `docs/restart-2026-09-09.md` for the latest verified source versions.
