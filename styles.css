@@ -336,3 +336,21 @@ h2 { font-size: 38px; }
   .site-nav { gap: 2px; }
 }
 
+.career-section { border-top: 1px solid var(--line); }
+.career-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 56px; }
+.career-case { min-width: 0; padding-top: 24px; border-top: 1px solid var(--line); }
+.career-label { color: var(--muted); font-size: 11px; margin-bottom: 12px; }
+.career-case h3 { font-size: 21px; line-height: 1.5; margin-bottom: 22px; }
+.career-case dl { display: grid; gap: 16px; margin: 0; }
+.career-case dl > div { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; }
+.career-case dt { font-size: 12px; color: var(--muted); padding-top: 3px; }
+.career-case dd { font-size: 14px; line-height: 1.85; color: var(--ink); margin: 0; }
+.career-focus { margin-top: 22px; color: var(--success); font-size: 12px; }
+.career-bridge { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 24px; }
+.career-bridge p { font-size: 14px; color: var(--muted); line-height: 1.85; max-width: 780px; }
+.career-bridge .text-link { margin-top: 8px; }
+@media (max-width: 800px) {
+  .career-grid { grid-template-columns: 1fr; gap: 28px; }
+  .career-case h3 { font-size: 20px; }
+}
+
