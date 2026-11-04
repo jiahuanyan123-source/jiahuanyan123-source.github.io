@@ -63,7 +63,7 @@ const caseStudies = {
     type: "Creative Side Project / Music",
     title: "创作实验室",
     summary: "个人创作副线。已发布网易云音乐单曲。",
-    role: "歌曲创作与发布；网易云音乐：闫家欢",
+    role: "歌曲创作与发布",
     focus: "个人创造力副线",
     year: "已发布",
     points: [
@@ -230,3 +230,4 @@ refreshIcons();
 updateScrollState();
 if (themeToggle) themeToggle.hidden = false;
 document.querySelector(".filter-bar")?.removeAttribute("hidden");
+

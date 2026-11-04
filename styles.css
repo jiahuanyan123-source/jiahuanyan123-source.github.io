@@ -332,3 +332,7 @@ h2 { font-size: 38px; }
 @media (max-height: 810px) and (max-width: 540px) {
   .hero { min-height: 530px; }
 }
+@media (max-width: 540px) {
+  .site-nav { gap: 2px; }
+}
+
