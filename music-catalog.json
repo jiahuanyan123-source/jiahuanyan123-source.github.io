@@ -1,0 +1,383 @@
+{
+  "checkedOn": "2026-11-04",
+  "artistId": 50711677,
+  "artistUrl": "https://music.163.com/artist?id=50711677",
+  "source": "https://music.163.com/api/artist/50711677",
+  "songCount": 35,
+  "releaseCount": 18,
+  "releases": [
+    {
+      "id": 398459364,
+      "name": "房间里的天气",
+      "date": "2026-09-14",
+      "coverUrl": "https://p2.music.126.net/3uwI82HNceUmGe5e73Qn7Q==/109951173943339021.jpg",
+      "url": "https://music.163.com/album?id=398459364",
+      "tracks": [
+        {
+          "id": 3436488570,
+          "name": "周六没出门",
+          "durationMs": 181600,
+          "url": "https://music.163.com/song?id=3436488570"
+        },
+        {
+          "id": 3436512425,
+          "name": "再听一遍",
+          "durationMs": 168080,
+          "url": "https://music.163.com/song?id=3436512425"
+        },
+        {
+          "id": 3436513656,
+          "name": "今晚绿灯特别多",
+          "durationMs": 162720,
+          "url": "https://music.163.com/song?id=3436513656"
+        },
+        {
+          "id": 3436513663,
+          "name": "和明天说上话",
+          "durationMs": 173920,
+          "url": "https://music.163.com/song?id=3436513663"
+        },
+        {
+          "id": 3436513791,
+          "name": "紫色纸糖 (Remastered)",
+          "durationMs": 148440,
+          "url": "https://music.163.com/song?id=3436513791"
+        }
+      ]
+    },
+    {
+      "id": 392824872,
+      "name": "到别处生活几天",
+      "date": "2026-08-16",
+      "coverUrl": "https://p2.music.126.net/pIRfLW5ooMyWrYqkk0aL_w==/109951173762188268.jpg",
+      "url": "https://music.163.com/album?id=392824872",
+      "tracks": [
+        {
+          "id": 3422002503,
+          "name": "把伦敦的雨走慢一点",
+          "durationMs": 181840,
+          "url": "https://music.163.com/song?id=3422002503"
+        },
+        {
+          "id": 3422007409,
+          "name": "在大阪多坐一站",
+          "durationMs": 189480,
+          "url": "https://music.163.com/song?id=3422007409"
+        },
+        {
+          "id": 3422009181,
+          "name": "南法午后三点半",
+          "durationMs": 201560,
+          "url": "https://music.163.com/song?id=3422009181"
+        },
+        {
+          "id": 3422313945,
+          "name": "京都下了一整天",
+          "durationMs": 204800,
+          "url": "https://music.163.com/song?id=3422313945"
+        },
+        {
+          "id": 3436483086,
+          "name": "离开东京以前",
+          "durationMs": 217480,
+          "url": "https://music.163.com/song?id=3436483086"
+        }
+      ]
+    },
+    {
+      "id": 380132803,
+      "name": "把晚风调小一点",
+      "date": "2026-06-06",
+      "coverUrl": "https://p2.music.126.net/iyAz1RbeyqUwMMZeNnA8kw==/109951173334183191.jpg",
+      "url": "https://music.163.com/album?id=380132803",
+      "tracks": [
+        {
+          "id": 3390344469,
+          "name": "把晚风调小一点",
+          "durationMs": 181000,
+          "url": "https://music.163.com/song?id=3390344469"
+        }
+      ]
+    },
+    {
+      "id": 379733123,
+      "name": "把未来挪近一点",
+      "date": "2026-06-03",
+      "coverUrl": "https://p2.music.126.net/vD2z0srlHxtANL0XuhF5Hg==/109951173323873667.jpg",
+      "url": "https://music.163.com/album?id=379733123",
+      "tracks": [
+        {
+          "id": 3389567850,
+          "name": "把未来挪近一点",
+          "durationMs": 211520,
+          "url": "https://music.163.com/song?id=3389567850"
+        }
+      ]
+    },
+    {
+      "id": 378589203,
+      "name": "把坏天气留在楼下",
+      "date": "2026-05-28",
+      "coverUrl": "https://p2.music.126.net/SeC2lm7mhTO5fRd1Ood4JA==/109951173288326062.jpg",
+      "url": "https://music.163.com/album?id=378589203",
+      "tracks": [
+        {
+          "id": 3386844615,
+          "name": "把坏天气留在楼下",
+          "durationMs": 170840,
+          "url": "https://music.163.com/song?id=3386844615"
+        }
+      ]
+    },
+    {
+      "id": 378589210,
+      "name": "今天也算数",
+      "date": "2026-05-28",
+      "coverUrl": "https://p2.music.126.net/7QmoVQ9jiaC0Lkd-ONicIw==/109951173288377514.jpg",
+      "url": "https://music.163.com/album?id=378589210",
+      "tracks": [
+        {
+          "id": 3386849947,
+          "name": "今天也算数",
+          "durationMs": 160640,
+          "url": "https://music.163.com/song?id=3386849947"
+        }
+      ]
+    },
+    {
+      "id": 378589215,
+      "name": "向夜色借一盏灯",
+      "date": "2026-05-28",
+      "coverUrl": "https://p2.music.126.net/O4Snn74m_PDh9IihdWCZhQ==/109951173289585142.jpg",
+      "url": "https://music.163.com/album?id=378589215",
+      "tracks": [
+        {
+          "id": 3386852926,
+          "name": "向夜色借一盏灯",
+          "durationMs": 202920,
+          "url": "https://music.163.com/song?id=3386852926"
+        }
+      ]
+    },
+    {
+      "id": 378589180,
+      "name": "灯还亮着",
+      "date": "2026-05-28",
+      "coverUrl": "https://p2.music.126.net/ldmCFf0vPnKAALH_hv8G9w==/109951173288261730.jpg",
+      "url": "https://music.163.com/album?id=378589180",
+      "tracks": [
+        {
+          "id": 3386840492,
+          "name": "灯还亮着",
+          "durationMs": 163360,
+          "url": "https://music.163.com/song?id=3386840492"
+        }
+      ]
+    },
+    {
+      "id": 378355212,
+      "name": "未接来电的星光",
+      "date": "2026-05-26",
+      "coverUrl": "https://p2.music.126.net/ZkC47sGkCUKz2dwB90iq0A==/109951173281298710.jpg",
+      "url": "https://music.163.com/album?id=378355212",
+      "tracks": [
+        {
+          "id": 3386279218,
+          "name": "未接来电的星光",
+          "durationMs": 250880,
+          "url": "https://music.163.com/song?id=3386279218"
+        }
+      ]
+    },
+    {
+      "id": 378355365,
+      "name": "Right Here Again",
+      "date": "2026-05-26",
+      "coverUrl": "https://p2.music.126.net/LIPvA2_y2QFe-zEAxi_9hQ==/109951173281522289.jpg",
+      "url": "https://music.163.com/album?id=378355365",
+      "tracks": [
+        {
+          "id": 3386303318,
+          "name": "Right Here Again",
+          "durationMs": 206920,
+          "url": "https://music.163.com/song?id=3386303318"
+        }
+      ]
+    },
+    {
+      "id": 378329664,
+      "name": "把雨唱成晴天",
+      "date": "2026-05-26",
+      "coverUrl": "https://p2.music.126.net/1eKuliW-MBLy0SC47BWX1A==/109951173281351836.jpg",
+      "url": "https://music.163.com/album?id=378329664",
+      "tracks": [
+        {
+          "id": 3386286005,
+          "name": "把雨唱成晴天",
+          "durationMs": 257320,
+          "url": "https://music.163.com/song?id=3386286005"
+        }
+      ]
+    },
+    {
+      "id": 378220286,
+      "name": "跨越时空的爱",
+      "date": "2026-05-25",
+      "coverUrl": "https://p2.music.126.net/2vVIez-5-Jinb8DH1ewaSg==/109951173278240927.jpg",
+      "url": "https://music.163.com/album?id=378220286",
+      "tracks": [
+        {
+          "id": 3386019122,
+          "name": "跨越时空的爱",
+          "durationMs": 259760,
+          "url": "https://music.163.com/song?id=3386019122"
+        }
+      ]
+    },
+    {
+      "id": 378067256,
+      "name": "霓虹路口",
+      "date": "2026-05-25",
+      "coverUrl": "https://p2.music.126.net/7q5eqzETUxxSVxuNcohXbg==/109951173274303860.jpg",
+      "url": "https://music.163.com/album?id=378067256",
+      "tracks": [
+        {
+          "id": 3385668784,
+          "name": "霓虹路口",
+          "durationMs": 231600,
+          "url": "https://music.163.com/song?id=3385668784"
+        }
+      ]
+    },
+    {
+      "id": 259765865,
+      "name": "夏夜的浪漫故事",
+      "date": "2025-01-16",
+      "coverUrl": "https://p2.music.126.net/Lvcxu-QGA_D0NMkFwEsdXQ==/109951170381788081.jpg",
+      "url": "https://music.163.com/album?id=259765865",
+      "tracks": [
+        {
+          "id": 2666536190,
+          "name": "夏夜的浪漫故事",
+          "durationMs": 213001,
+          "url": "https://music.163.com/song?id=2666536190"
+        }
+      ]
+    },
+    {
+      "id": 172506181,
+      "name": "下雨的时候会想你",
+      "date": "2023-08-15",
+      "coverUrl": "https://p2.music.126.net/ekKtifBX_OrJ8mHUc_l5yg==/109951168845611596.jpg",
+      "url": "https://music.163.com/album?id=172506181",
+      "tracks": [
+        {
+          "id": 2073831207,
+          "name": "下雨的时候会想你",
+          "durationMs": 255483,
+          "url": "https://music.163.com/song?id=2073831207"
+        }
+      ]
+    },
+    {
+      "id": 148890912,
+      "name": "想要去远方",
+      "date": "2022-07-29",
+      "coverUrl": "https://p2.music.126.net/MtVyY6pHDqv2S5VF5nYULA==/109951167728880135.jpg",
+      "url": "https://music.163.com/album?id=148890912",
+      "tracks": [
+        {
+          "id": 1968115642,
+          "name": "想要去远方",
+          "durationMs": 289000,
+          "url": "https://music.163.com/song?id=1968115642"
+        }
+      ]
+    },
+    {
+      "id": 141046634,
+      "name": "你",
+      "date": "2022-02-27",
+      "coverUrl": "https://p2.music.126.net/IFezP3mIWgE8yp7ImIMgMA==/109951167096493503.jpg",
+      "url": "https://music.163.com/album?id=141046634",
+      "tracks": [
+        {
+          "id": 1923903869,
+          "name": "你",
+          "durationMs": 232742,
+          "url": "https://music.163.com/song?id=1923903869"
+        }
+      ]
+    },
+    {
+      "id": 138214260,
+      "name": "关于南方的事",
+      "date": "2021-12-31",
+      "coverUrl": "https://p2.music.126.net/xnjU3k8mwwCxq-51S2cyJQ==/109951166873527207.jpg",
+      "url": "https://music.163.com/album?id=138214260",
+      "tracks": [
+        {
+          "id": 1908287321,
+          "name": "小金",
+          "durationMs": 288956,
+          "url": "https://music.163.com/song?id=1908287321"
+        },
+        {
+          "id": 1908287474,
+          "name": "那个夏天",
+          "durationMs": 277463,
+          "url": "https://music.163.com/song?id=1908287474"
+        },
+        {
+          "id": 1908287876,
+          "name": "初雪",
+          "durationMs": 223944,
+          "url": "https://music.163.com/song?id=1908287876"
+        },
+        {
+          "id": 1908288001,
+          "name": "孤独的城市",
+          "durationMs": 282996,
+          "url": "https://music.163.com/song?id=1908288001"
+        },
+        {
+          "id": 1908288115,
+          "name": "凌晨三点的北京",
+          "durationMs": 241217,
+          "url": "https://music.163.com/song?id=1908288115"
+        },
+        {
+          "id": 1908288160,
+          "name": "南方的记忆",
+          "durationMs": 267399,
+          "url": "https://music.163.com/song?id=1908288160"
+        },
+        {
+          "id": 1908288229,
+          "name": "过客",
+          "durationMs": 247355,
+          "url": "https://music.163.com/song?id=1908288229"
+        },
+        {
+          "id": 1908288330,
+          "name": "蓝色百褶裙",
+          "durationMs": 243910,
+          "url": "https://music.163.com/song?id=1908288330"
+        },
+        {
+          "id": 1908303834,
+          "name": "消失在人海",
+          "durationMs": 220604,
+          "url": "https://music.163.com/song?id=1908303834"
+        },
+        {
+          "id": 1908303887,
+          "name": "旧吉他",
+          "durationMs": 270381,
+          "url": "https://music.163.com/song?id=1908303887"
+        }
+      ]
+    }
+  ]
+}
+

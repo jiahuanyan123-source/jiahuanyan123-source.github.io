@@ -149,7 +149,7 @@ test("all project dialogs open, close and restore keyboard focus", async ({ page
     ["financial-rag-eval", "Financial RAG & Credit Memo Eval", "https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence"],
     ["crypto-quant-lab", "Crypto Quant Freqtrade Lab", "https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab"],
     ["llm-learning-log", "LLM Learning Log", "https://github.com/jiahuanyan123-source"],
-    ["creative-lab", "创作实验室", "https://163cn.tv/79f4dcc"]
+    ["creative-lab", "创作实验室", "music.html"]
   ];
   for (const [key, title, url] of cases) {
     const trigger = page.locator(`[data-case="${key}"]`);
