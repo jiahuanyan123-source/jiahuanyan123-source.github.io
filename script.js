@@ -20,10 +20,10 @@ const caseStudies = {
     points: [
       "公开 repo 已包含合成单文档/多文档样本、eval-rag CLI、Markdown/JSON 报告和 GitHub Actions。",
       "报告范围：3 份合成文档、4 个用例、top-k = 5。source-prior 的 line recall@k 为 87.50%，干扰行混入率为 5.00%，用例通过率为 50.00%。",
-      "retrieval comparison report 已公开：embedding retrieval 仍标记为 not implemented，没有提前编造指标。",
-      "限制：样本是合成文档，不是生产 RAG、不是 LLM benchmark，也不证明信用判断质量。"
+      "新版公开了非神经哈希检索对照。同一小样本上，不同维度的通过率从 0% 到 100%，结果对参数敏感。",
+      "仓库还提供使用虚构文本的文档版本比对演示。检索评测不证明实际业务、神经向量检索或信用判断质量。"
     ],
-    next: "扩充发行人、模糊名称与无答案用例，冻结评测集；随后在同一 top-k 和指标下比较 embedding 与 source-prior 检索。",
+    next: "扩充发行人、中文和无答案样例；在固定样本和指标下比较检索方法。",
     link: "https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence",
     linkText: "查看 financial-ai-doc-intelligence"
   },
@@ -35,11 +35,11 @@ const caseStudies = {
     focus: "Freqtrade、OKX futures、dry-run、失败策略归档、风险边界",
     year: "2026",
     points: [
-      "已公开策略代码与研究文档；现有 CI 只检查 Python 语法，不验证策略运行或回测质量。",
+      "已公开策略代码和固定窗口回测入口。CI 检查语法、命令与配置，不验证策略运行或回测质量。",
       "包含 README、结果摘要、策略代码、Moonshot radar 和失败策略记录。",
       "分窗口验证表仍为 pending，历史摘要不等于已完成独立复现或样本外验证。"
     ],
-    next: "Python 语法检查 CI、README 复现清单和数据下载指引已完成；下一步补 walk-forward 验证摘要和 exact commands。",
+    next: "按公开配置实际运行固定窗口回测，记录数据覆盖、命令和结果；目前不将分段回测视为独立样本外验证。",
     link: "https://github.com/jiahuanyan123-source/crypto-quant-freqtrade-lab",
     linkText: "查看 crypto-quant-freqtrade-lab"
   },

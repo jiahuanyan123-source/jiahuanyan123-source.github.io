@@ -95,7 +95,7 @@ test("page loads local assets and readable project evidence", async ({ page }, t
   await expect(page.locator(".work-card")).toHaveCount(4);
   await expect(page.locator('[data-category="finance"] .case-note')).toContainText("3 份合成文档、4 个用例");
   await expect(page.locator('[data-category="finance"] .case-note')).toContainText("50%");
-  await expect(page.locator('[data-category="quant"] .evidence-facts')).toContainText("仅语法检查");
+  await expect(page.locator('[data-category="quant"] .evidence-facts')).toContainText("语法与配置检查");
   await expect(page.locator('.report-bars')).toContainText("35%");
   await expect(page.locator('.report-bars')).toContainText("5%");
   await page.screenshot({ path: testInfo.outputPath("projects.png") });
@@ -171,12 +171,12 @@ test("all project dialogs open, close and restore keyboard focus", async ({ page
 test("report links point to pinned sources and bypass the dialog", async ({ page }) => {
   await page.goto("/#work");
   const report = page.getByRole("link", { name: "评测报告", exact: true });
-  await expect(report).toHaveAttribute("href", "https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence/blob/022dc44dc371767865f7d7f2ef9a1e6fb6f380c6/reports/retrieval_comparison.md");
+  await expect(report).toHaveAttribute("href", "https://github.com/jiahuanyan123-source/financial-ai-doc-intelligence/blob/6a31981da7380082521a3db609a2212c195bddf4/reports/embedding_dimension_sensitivity.md");
   await page.context().route("https://github.com/**", (route) => route.fulfill({ contentType: "text/html", body: "<title>Report link test</title>" }));
   const popupPromise = page.waitForEvent("popup");
   await report.click();
   const popup = await popupPromise;
-  await expect(popup).toHaveURL(/\/022dc44dc371767865f7d7f2ef9a1e6fb6f380c6\/reports\/retrieval_comparison\.md$/);
+  await expect(popup).toHaveURL(/\/6a31981da7380082521a3db609a2212c195bddf4\/reports\/embedding_dimension_sensitivity\.md$/);
   await expect(page.getByRole("dialog")).not.toBeVisible();
   await popup.close();
 });
@@ -185,7 +185,7 @@ test("navigation works at every viewport and text is not clipped", async ({ page
   await page.goto("/");
   const nav = page.getByRole("navigation", { name: "主导航" });
   await expect(nav).toBeVisible();
-  for (const [label, id] of [["计划", "build"], ["记录", "journal"], ["关于", "about"], ["联系", "contact"], ["项目", "work"]]) {
+  for (const [label, id] of [["经历", "experience"], ["记录", "journal"], ["关于", "about"], ["联系", "contact"], ["项目", "work"]]) {
     await nav.getByRole("link", { name: label, exact: true }).click();
     await expect(page).toHaveURL(new RegExp(`#${id}$`));
     const clearOfHeader = await page.locator(`#${id}`).evaluate((element) => element.getBoundingClientRect().top >= document.querySelector(".site-header").getBoundingClientRect().bottom - 1);

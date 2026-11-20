@@ -1,5 +1,15 @@
 import { test, expect } from "@playwright/test";
 
+test("career navigation and public contact omit personal email", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("navigation", { name: "主导航" }).getByRole("link", { name: "经历" }).click();
+  await expect(page).toHaveURL(/#experience$/);
+  await expect(page.locator("a[href^='mailto:']")).toHaveCount(0);
+  const structured = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  expect(structured).not.toHaveProperty("email");
+  await expect(page.getByRole("link", { name: "通过 GitHub 联系" })).toHaveAttribute("href", "https://github.com/jiahuanyan123-source");
+});
+
 test("career overview integrates resume and financing cases by business type", async ({ page }) => {
   await page.goto("/#experience");
   const section = page.locator("#experience");
